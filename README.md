@@ -1,6 +1,6 @@
 # izi-facture
 
-SaaS de facturation pour entrepreneurs africains — Next.js 15 (App Router), Tailwind CSS, Supabase (à venir), déploiement Vercel.
+SaaS de facturation pour entrepreneurs africains — Next.js 15 (App Router), Tailwind CSS, Supabase (base de données, authentification, stockage), déploiement Vercel.
 
 ## Démarrer
 
