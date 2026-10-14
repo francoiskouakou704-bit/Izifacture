@@ -1,0 +1,350 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ─── CSS Variables ─────────────────────────────────────────── */
+:root {
+  /* Surfaces */
+  --bg-primary:   #F8F9FA;
+  --bg-card:      #FFFFFF;
+  --bg-elevated:  #FFFFFF;
+
+  /* Borders */
+  --border:       #E9ECEF;
+  --border-muted: #F1F3F5;
+
+  /* Text */
+  --text-primary: #212529;
+  --text-secondary:#495057;
+  --text-muted:   #868E96;
+  --text-inverse: #FFFFFF;
+
+  /* Brand */
+  --primary:       #3B5BDB;
+  --primary-hover: #364FC7;
+  --primary-light: #EEF2FF;
+  --primary-muted: #C7D2FE;
+
+  /* Semantic */
+  --success:      #2F9E44;
+  --success-bg:   #EBFBEE;
+  --warning:      #F08C00;
+  --warning-bg:   #FFF9DB;
+  --danger:       #C92A2A;
+  --danger-bg:    #FFF5F5;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+  --shadow-md: 0 4px 16px -2px rgb(0 0 0 / 0.10), 0 2px 8px -2px rgb(0 0 0 / 0.06);
+
+  /* Sidebar */
+  --sidebar-w: 260px;
+}
+
+.dark {
+  /* Contrôles natifs (icône calendrier, barres de défilement) en version sombre */
+  color-scheme: dark;
+  --bg-primary:   #0F1117;
+  --bg-card:      #1A1D27;
+  --bg-elevated:  #21253A;
+
+  --border:       #2C2F3F;
+  --border-muted: #22263A;
+
+  --text-primary: #F1F3F5;
+  --text-secondary:#CED4DA;
+  --text-muted:   #868E96;
+
+  --primary:       #6366F1;
+  --primary-hover: #818CF8;
+  --primary-light: #1E1B4B;
+  --primary-muted: #312E81;
+
+  --success-bg:   #0D2E14;
+  --warning-bg:   #2A1F04;
+  --danger-bg:    #2A0D0D;
+
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.30);
+  --shadow-md: 0 4px 16px -2px rgb(0 0 0 / 0.40);
+}
+
+/* ─── Base ──────────────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-[var(--border)];
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    @apply text-sm;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    @apply font-semibold;
+  }
+
+  ::selection {
+    background: var(--primary-muted);
+    color: var(--text-primary);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+  }
+}
+
+/* ─── Components ────────────────────────────────────────────── */
+@layer components {
+  /* Card */
+  .card {
+    @apply bg-[var(--bg-card)] rounded-xl border border-[var(--border)] shadow-xs;
+  }
+
+  /* Input */
+  .input-base {
+    @apply w-full rounded-lg border border-[var(--border)] bg-[var(--bg-card)]
+           text-[var(--text-primary)] placeholder:text-[var(--text-muted)]
+           px-3 py-2 text-sm transition-all duration-150 outline-none
+           focus:border-primary-600 focus:shadow-ring;
+  }
+
+  .input-base:hover:not(:focus):not(:disabled) {
+    @apply border-gray-400;
+  }
+
+  /* Champ à label intégré (style « floating », écran de création de facture) */
+  .field-floating {
+    @apply relative flex w-full min-w-0 items-center gap-2 rounded-xl border border-[var(--border)]
+           bg-[var(--bg-card)] px-3 pb-1.5 pt-[22px] text-sm text-[var(--text-primary)]
+           transition-all duration-150 focus-within:border-primary-600 focus-within:shadow-ring;
+  }
+  .field-floating:hover:not(:focus-within) {
+    @apply border-gray-400;
+  }
+  .field-floating .field-label {
+    @apply pointer-events-none absolute start-3 top-1.5 max-w-[calc(100%-1.5rem)] truncate text-[11px] font-medium leading-4 text-[var(--text-muted)];
+  }
+  .field-floating .field-control {
+    @apply h-6 w-full min-w-0 flex-1 border-0 bg-transparent p-0 text-sm text-[var(--text-primary)] outline-none placeholder:text-[var(--text-muted)];
+  }
+  .field-floating .field-control[type='number'] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+  .field-floating .field-control::-webkit-outer-spin-button,
+  .field-floating .field-control::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* En RTL, l'indicateur natif rejoint l'icône décorative : on ne garde que le natif */
+  [dir='rtl'] .field-floating:has(> input[type='date']) > span:first-of-type {
+    display: none;
+  }
+  .field-floating .field-control::-webkit-calendar-picker-indicator {
+    @apply cursor-pointer opacity-60;
+  }
+  .field-floating.field-readonly {
+    @apply bg-gray-50 dark:bg-dark-elevated;
+  }
+  .field-floating.field-error {
+    @apply border-danger-500 focus-within:border-danger-500 focus-within:shadow-ring-danger;
+  }
+
+  /* Label */
+  .label {
+    @apply text-xs font-medium text-[var(--text-secondary)] mb-1 block;
+  }
+
+  /* Badge base */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  /* Status colors */
+  .badge-draft    { @apply bg-gray-100 text-gray-700 dark:bg-dark-muted dark:text-gray-400; }
+  .badge-sent     { @apply bg-warning-50 text-warning-700 dark:bg-warning-700/20 dark:text-warning-500; }
+  .badge-paid     { @apply bg-success-50 text-success-700 dark:bg-success-700/20 dark:text-success-500; }
+  .badge-overdue  { @apply bg-danger-50 text-danger-700 dark:bg-danger-700/20 dark:text-danger-500; }
+  .badge-cancelled{ @apply bg-gray-100 text-gray-600 dark:bg-dark-muted dark:text-gray-500; }
+
+  /* Sidebar item */
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
+           text-[var(--text-secondary)] hover:text-[var(--text-primary)]
+           hover:bg-gray-100 dark:hover:bg-dark-elevated
+           transition-all duration-150 cursor-pointer select-none;
+  }
+  .nav-item-active {
+    @apply bg-primary-50 text-primary-700 dark:bg-primary-950/60 dark:text-primary-300
+           hover:bg-primary-50 dark:hover:bg-primary-950/60;
+  }
+
+  /* Stats card */
+  .stat-card {
+    @apply card p-5 hover:shadow-md transition-shadow duration-200;
+  }
+
+  /* Table */
+  .table-wrapper {
+    @apply card overflow-hidden;
+  }
+  .table-base {
+    /* relative : contient les éléments absolus (ex. sr-only) dans la zone scrollable du tableau,
+       sinon ils élargissent toute la page sur mobile */
+    @apply relative w-full text-sm;
+  }
+  .table-base thead {
+    @apply border-b border-[var(--border)] bg-gray-25 dark:bg-dark-elevated;
+  }
+  /* :where() garde une spécificité basse pour que text-end & co. puissent surcharger */
+  .table-base :where(th) {
+    @apply px-4 py-3 text-start text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider;
+  }
+  .table-base :where(td) {
+    @apply px-4 py-3.5 text-[var(--text-primary)];
+  }
+  .table-base tbody tr {
+    @apply border-b border-[var(--border-muted)] hover:bg-gray-25 dark:hover:bg-dark-elevated
+           transition-colors duration-100;
+  }
+  .table-base tbody tr:last-child {
+    @apply border-0;
+  }
+
+  /* Page header */
+  .page-header {
+    @apply flex items-center justify-between mb-6;
+  }
+  .page-title {
+    @apply text-2xl font-bold text-[var(--text-primary)];
+  }
+  .page-subtitle {
+    @apply text-sm text-[var(--text-muted)] mt-0.5;
+  }
+
+  /* Section title */
+  .section-title {
+    @apply text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-2 px-1;
+  }
+
+  /* Divider */
+  .divider {
+    @apply border-t border-[var(--border)] my-4;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent;
+  }
+}
+
+/* ─── Utilities ─────────────────────────────────────────────── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+/* ─── Impression : seule la facture est imprimée ─────────────── */
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+  /* Le shell de l'app (h-screen + zones scrollables) tronquerait l'impression à une page */
+  .h-screen {
+    height: auto !important;
+  }
+  .overflow-hidden,
+  .overflow-y-auto {
+    overflow: visible !important;
+  }
+  body * {
+    visibility: hidden;
+  }
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+  .print-area {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .invoice-paper {
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* ─── Écritures de droite à gauche (arabe, hébreu, persan, ourdou) ─── */
+[dir='rtl'] .lucide-chevron-right,
+[dir='rtl'] .lucide-chevron-left,
+[dir='rtl'] .lucide-arrow-right,
+[dir='rtl'] .lucide-arrow-left,
+[dir='rtl'] .lucide-arrow-up-right,
+[dir='rtl'] .lucide-arrow-down-right {
+  transform: scaleX(-1);
+}
+[dir='rtl'] .animate-slide-in-left {
+  animation-name: slideInRight;
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Écritures liées (arabe, persan, ourdou…) : l'espacement des lettres casse la liaison des glyphes,
+   à l'écran comme dans l'export PDF. */
+[dir='rtl'] .invoice-paper,
+[dir='rtl'] .invoice-paper * {
+  letter-spacing: normal !important;
+}
