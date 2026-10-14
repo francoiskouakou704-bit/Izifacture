@@ -11,7 +11,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: t('login') }
 }
 
-export default async function LoginPage({ searchParams }: { searchParams: { next?: string; error?: string } }) {
+export default async function LoginPage(props: { searchParams: Promise<{ next?: string; error?: string }> }) {
+  const searchParams = await props.searchParams
   const t = await getTranslations('auth')
   const next = safeNextPath(searchParams.next)
 

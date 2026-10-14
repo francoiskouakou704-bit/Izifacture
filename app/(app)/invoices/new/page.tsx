@@ -9,7 +9,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: t('newInvoice') }
 }
 
-export default async function NewInvoicePage({ searchParams }: { searchParams: { client?: string } }) {
+export default async function NewInvoicePage(props: { searchParams: Promise<{ client?: string }> }) {
+  const searchParams = await props.searchParams
   const org = await requireOrganization()
   const clients = await getDataSource().listClients()
   const defaultClientId = clients.some((c) => c.id === searchParams.client) ? searchParams.client : undefined

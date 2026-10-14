@@ -171,7 +171,7 @@ function recordToJson(record: InvoiceRecord): Json {
 // ─── Lectures mémoïsées par requête ──────────────────────────────────────────
 
 const getOrgRow = cache(async (): Promise<OrgRow | null> => {
-  const { data, error } = await db().from('organizations').select('*').order('created_at').limit(1).maybeSingle()
+  const { data, error } = await (await db()).from('organizations').select('*').order('created_at').limit(1).maybeSingle()
   check(error)
   return data
 })
@@ -187,8 +187,8 @@ const loadInvoices = cache(async (): Promise<Invoice[]> => {
   const org = await getOrgRow()
   if (!org) return []
   const [invoices, clients] = await Promise.all([
-    db().from('invoices').select('*').eq('organization_id', org.id),
-    db().from('clients').select('id, name').eq('organization_id', org.id),
+    (await db()).from('invoices').select('*').eq('organization_id', org.id),
+    (await db()).from('clients').select('id, name').eq('organization_id', org.id),
   ])
   const names = new Map(must(clients).map((c) => [c.id, c.name]))
   return must(invoices).map((r) => toInvoice(r, [], names.get(r.client_id)))
@@ -197,12 +197,12 @@ const loadInvoices = cache(async (): Promise<Invoice[]> => {
 async function fetchInvoice(id: string): Promise<Invoice | null> {
   // Identifiant non UUID (ancien lien, saisie manuelle) : simplement introuvable.
   if (!/^[0-9a-f-]{36}$/i.test(id)) return null
-  const { data: row, error } = await db().from('invoices').select('*').eq('id', id).maybeSingle()
+  const { data: row, error } = await (await db()).from('invoices').select('*').eq('id', id).maybeSingle()
   check(error)
   if (!row) return null
   const [items, client] = await Promise.all([
-    db().from('invoice_items').select('*').eq('invoice_id', id),
-    db().from('clients').select('name').eq('id', row.client_id).maybeSingle(),
+    (await db()).from('invoice_items').select('*').eq('invoice_id', id),
+    (await db()).from('clients').select('name').eq('id', row.client_id).maybeSingle(),
   ])
   return toInvoice(row, must(items), client.data?.name)
 }
@@ -213,9 +213,9 @@ export const supabaseDataSource: DataSource = {
   async getCurrentUser(): Promise<CurrentUser | null> {
     const {
       data: { user },
-    } = await db().auth.getUser()
+    } = await (await db()).auth.getUser()
     if (!user) return null
-    const { data: profile } = await db().from('profiles').select('full_name, avatar_url').eq('id', user.id).maybeSingle()
+    const { data: profile } = await (await db()).from('profiles').select('full_name, avatar_url').eq('id', user.id).maybeSingle()
     return {
       id: user.id,
       email: user.email ?? '',
@@ -231,11 +231,11 @@ export const supabaseDataSource: DataSource = {
   },
 
   async createOrganization(data) {
-    const { error } = await db().rpc('create_organization', {
+    const { error } = await (await db()).rpc('create_organization', {
       p: { name: data.name, email: data.email ?? '', country: data.country ?? '', defaultCurrency: data.defaultCurrency },
     })
     check(error)
-    const { data: row, error: e2 } = await db().from('organizations').select('*').order('created_at').limit(1).single()
+    const { data: row, error: e2 } = await (await db()).from('organizations').select('*').order('created_at').limit(1).single()
     check(e2)
     return toOrganization(row!)
   },
@@ -260,12 +260,12 @@ export const supabaseDataSource: DataSource = {
     if (patch.defaultTaxRate !== undefined) update.default_tax_rate = patch.defaultTaxRate
     if (patch.invoicePrefix) update.invoice_prefix = patch.invoicePrefix
     if (patch.paymentTermsDays !== undefined) update.payment_terms_days = patch.paymentTermsDays
-    return toOrganization(must(await db().from('organizations').update(update).eq('id', org.id).select('*').single()))
+    return toOrganization(must(await (await db()).from('organizations').update(update).eq('id', org.id).select('*').single()))
   },
 
   async setLogo(file) {
     const org = await requireOrgRow()
-    const bucket = db().storage.from('logos')
+    const bucket = (await db()).storage.from('logos')
     // Supprime les anciens fichiers du dossier de l'organisation
     const { data: existing } = await bucket.list(org.id)
     if (existing?.length) await bucket.remove(existing.map((f) => `${org.id}/${f.name}`))
@@ -279,7 +279,7 @@ export const supabaseDataSource: DataSource = {
       if (error) throw new Error(`[supabase] storage ${error.message}`)
       logoUrl = bucket.getPublicUrl(path).data.publicUrl
     }
-    check((await db().from('organizations').update({ logo_url: logoUrl }).eq('id', org.id)).error)
+    check((await (await db()).from('organizations').update({ logo_url: logoUrl }).eq('id', org.id)).error)
   },
 
   // ── Clients ───────────────────────────────────────────────────
@@ -287,7 +287,7 @@ export const supabaseDataSource: DataSource = {
     const org = await getOrgRow()
     if (!org) return []
     const [rows, invoices] = await Promise.all([
-      db().from('clients').select('*').eq('organization_id', org.id).order('name'),
+      (await db()).from('clients').select('*').eq('organization_id', org.id).order('name'),
       loadInvoices(),
     ])
     return must(rows)
@@ -299,7 +299,7 @@ export const supabaseDataSource: DataSource = {
 
   async getClient(id) {
     if (!/^[0-9a-f-]{36}$/i.test(id)) return null
-    const { data, error } = await db().from('clients').select('*').eq('id', id).maybeSingle()
+    const { data, error } = await (await db()).from('clients').select('*').eq('id', id).maybeSingle()
     check(error)
     return data ? withClientStats(toClient(data), await loadInvoices()) : null
   },
@@ -307,7 +307,7 @@ export const supabaseDataSource: DataSource = {
   async createClient(data) {
     const org = await requireOrgRow()
     const row = must(
-      await db()
+      await (await db())
         .from('clients')
         .insert({
           organization_id: org.id,
@@ -327,7 +327,7 @@ export const supabaseDataSource: DataSource = {
   },
 
   async updateClient(id, data) {
-    const { data: row, error } = await db()
+    const { data: row, error } = await (await db())
       .from('clients')
       .update({
         name: data.name.trim(),
@@ -348,7 +348,7 @@ export const supabaseDataSource: DataSource = {
   },
 
   async setClientArchived(id, archived) {
-    const { data, error } = await db()
+    const { data, error } = await (await db())
       .from('clients')
       .update({ archived_at: archived ? new Date().toISOString() : null })
       .eq('id', id)
@@ -366,7 +366,7 @@ export const supabaseDataSource: DataSource = {
 
   async getInvoiceByToken(token) {
     if (!/^[0-9a-f-]{36}$/i.test(token)) return null
-    const { data, error } = await db().rpc('get_public_invoice', { p_token: token })
+    const { data, error } = await (await db()).rpc('get_public_invoice', { p_token: token })
     check(error)
     if (!data) return null
     const payload = data as unknown as { invoice: InvoiceRow; items: ItemRow[]; organization: OrgRow }
@@ -377,17 +377,17 @@ export const supabaseDataSource: DataSource = {
   },
 
   async createInvoice(record) {
-    const id = must(await db().rpc('save_invoice', { p_id: null, p: recordToJson(record) }))
+    const id = must(await (await db()).rpc('save_invoice', { p_id: null, p: recordToJson(record) }))
     return (await fetchInvoice(id))!
   },
 
   async updateInvoice(id, record) {
-    must(await db().rpc('save_invoice', { p_id: id, p: recordToJson(record) }))
+    must(await (await db()).rpc('save_invoice', { p_id: id, p: recordToJson(record) }))
     return (await fetchInvoice(id))!
   },
 
   async deleteInvoice(id) {
-    const { data, error } = await db().from('invoices').delete().eq('id', id).eq('status', 'draft').select('id')
+    const { data, error } = await (await db()).from('invoices').delete().eq('id', id).eq('status', 'draft').select('id')
     check(error)
     if (!data?.length) {
       const exists = await fetchInvoice(id)
@@ -396,18 +396,18 @@ export const supabaseDataSource: DataSource = {
   },
 
   async sendInvoice(id) {
-    must(await db().rpc('send_invoice', { p_id: id }))
+    must(await (await db()).rpc('send_invoice', { p_id: id }))
     return (await fetchInvoice(id))!
   },
 
   async cancelInvoice(id) {
-    check((await db().rpc('cancel_invoice', { p_id: id })).error)
+    check((await (await db()).rpc('cancel_invoice', { p_id: id })).error)
     return (await fetchInvoice(id))!
   },
 
   async addPayment(invoiceId, payment) {
     const id = must(
-      await db().rpc('add_payment', {
+      await (await db()).rpc('add_payment', {
         p_invoice: invoiceId,
         p_amount: payment.amount,
         p_paid_on: payment.paidOn,
@@ -415,22 +415,22 @@ export const supabaseDataSource: DataSource = {
         p_reference: payment.reference ?? null,
       })
     )
-    return toPayment(must(await db().from('payments').select('*').eq('id', id).single()))
+    return toPayment(must(await (await db()).from('payments').select('*').eq('id', id).single()))
   },
 
   async listPayments(invoiceId) {
-    const rows = must(await db().from('payments').select('*').eq('invoice_id', invoiceId).order('paid_on', { ascending: false }))
+    const rows = must(await (await db()).from('payments').select('*').eq('invoice_id', invoiceId).order('paid_on', { ascending: false }))
     return rows.map(toPayment)
   },
 
   async listEvents(invoiceId) {
     const rows = must(
-      await db().from('invoice_events').select('*').eq('invoice_id', invoiceId).order('created_at', { ascending: false })
+      await (await db()).from('invoice_events').select('*').eq('invoice_id', invoiceId).order('created_at', { ascending: false })
     )
     const actorIds = Array.from(new Set(rows.map((r) => r.actor_id).filter((v): v is string => Boolean(v))))
     const names = new Map<string, string>()
     if (actorIds.length) {
-      const profiles = must(await db().from('profiles').select('id, full_name').in('id', actorIds))
+      const profiles = must(await (await db()).from('profiles').select('id, full_name').in('id', actorIds))
       for (const p of profiles) names.set(p.id, p.full_name)
     }
     return rows.map(
@@ -452,14 +452,14 @@ export const supabaseDataSource: DataSource = {
 
   async recordPublicView(token) {
     if (!/^[0-9a-f-]{36}$/i.test(token)) return
-    check((await db().rpc('record_invoice_view', { p_token: token })).error)
+    check((await (await db()).rpc('record_invoice_view', { p_token: token })).error)
   },
 
   // ── Statistiques ──────────────────────────────────────────────
   async getDashboardStats({ period, currency }) {
     const org = await requireOrgRow()
     // La RLS limite les paiements à ceux de l'organisation de l'utilisateur.
-    const [invoices, paymentRows] = await Promise.all([loadInvoices(), db().from('payments').select('*')])
+    const [invoices, paymentRows] = await Promise.all([loadInvoices(), (await db()).from('payments').select('*')])
     const payments = must(paymentRows).map(toPayment)
     const defaultCurrency = org.default_currency as Currency
     return computeDashboardStats(invoices, payments, {

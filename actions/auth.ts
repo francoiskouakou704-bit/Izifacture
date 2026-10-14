@@ -16,10 +16,10 @@ import {
 import { runAction } from './utils'
 
 /** URL publique du site, pour les liens envoyés par e-mail. */
-function siteUrl() {
+async function siteUrl() {
   const configured = process.env.NEXT_PUBLIC_SITE_URL
   if (configured) return configured.replace(/\/$/, '')
-  const h = headers()
+  const h = await headers()
   const host = h.get('x-forwarded-host') ?? h.get('host') ?? 'localhost:3000'
   const proto = h.get('x-forwarded-proto') ?? (host.startsWith('localhost') ? 'http' : 'https')
   return `${proto}://${host}`
@@ -45,7 +45,7 @@ export async function signInAction(rawInput: unknown, next?: string) {
   return runAction(async () => {
     const data = signInSchema.parse(rawInput)
     if (isSupabaseEnabled()) {
-      const { error } = await createSupabaseServerClient().auth.signInWithPassword(data)
+      const { error } = await (await createSupabaseServerClient()).auth.signInWithPassword(data)
       if (error) authError(error)
     }
     return { redirectTo: safeNextPath(next) }
@@ -56,12 +56,12 @@ export async function signUpAction(rawInput: unknown) {
   return runAction(async () => {
     const data = signUpSchema.parse(rawInput)
     if (!isSupabaseEnabled()) return { needsConfirmation: false }
-    const { data: result, error } = await createSupabaseServerClient().auth.signUp({
+    const { data: result, error } = await (await createSupabaseServerClient()).auth.signUp({
       email: data.email,
       password: data.password,
       options: {
         data: { full_name: data.fullName },
-        emailRedirectTo: `${siteUrl()}/auth/callback?next=/onboarding`,
+        emailRedirectTo: `${await siteUrl()}/auth/callback?next=/onboarding`,
       },
     })
     if (error) authError(error)
@@ -75,10 +75,10 @@ export async function signUpAction(rawInput: unknown) {
 export async function signInWithGoogleAction(next?: string) {
   return runAction(async () => {
     if (!isSupabaseEnabled()) return { url: safeNextPath(next) }
-    const { data, error } = await createSupabaseServerClient().auth.signInWithOAuth({
+    const { data, error } = await (await createSupabaseServerClient()).auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${siteUrl()}/auth/callback?next=${encodeURIComponent(safeNextPath(next))}`,
+        redirectTo: `${await siteUrl()}/auth/callback?next=${encodeURIComponent(safeNextPath(next))}`,
         queryParams: { prompt: 'select_account' },
       },
     })
@@ -91,7 +91,7 @@ export async function signInWithGoogleAction(next?: string) {
 }
 
 export async function signOutAction() {
-  if (isSupabaseEnabled()) await createSupabaseServerClient().auth.signOut()
+  if (isSupabaseEnabled()) await (await createSupabaseServerClient()).auth.signOut()
   redirect('/login')
 }
 
@@ -99,8 +99,8 @@ export async function requestPasswordResetAction(rawInput: unknown) {
   return runAction(async () => {
     const { email } = forgotPasswordSchema.parse(rawInput)
     if (isSupabaseEnabled()) {
-      const { error } = await createSupabaseServerClient().auth.resetPasswordForEmail(email, {
-        redirectTo: `${siteUrl()}/auth/callback?next=/reset-password`,
+      const { error } = await (await createSupabaseServerClient()).auth.resetPasswordForEmail(email, {
+        redirectTo: `${await siteUrl()}/auth/callback?next=/reset-password`,
       })
       // Réponse identique que le compte existe ou non ; seules les limites sont signalées.
       if (error && error.status === 429) authError(error)
@@ -113,7 +113,7 @@ export async function updatePasswordAction(rawInput: unknown) {
   return runAction(async () => {
     const { password } = resetPasswordSchema.parse(rawInput)
     if (isSupabaseEnabled()) {
-      const { error } = await createSupabaseServerClient().auth.updateUser({ password })
+      const { error } = await (await createSupabaseServerClient()).auth.updateUser({ password })
       if (error) authError(error)
     }
   })

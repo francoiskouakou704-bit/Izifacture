@@ -39,7 +39,8 @@ function Trend({ value, vsLabel, noneLabel, format }: { value: number | null; vs
   )
 }
 
-export default async function DashboardPage({ searchParams }: { searchParams: { period?: string; currency?: string } }) {
+export default async function DashboardPage(props: { searchParams: Promise<{ period?: string; currency?: string }> }) {
+  const searchParams = await props.searchParams
   const ds = getDataSource()
   const [org, user, t, tp, tt, tc, fmt] = await Promise.all([
     requireOrganization(),

@@ -26,7 +26,8 @@ const PAGE_SIZE = 10
 
 type SearchParams = { status?: string; q?: string; sort?: string; page?: string }
 
-export default async function InvoicesPage({ searchParams }: { searchParams: SearchParams }) {
+export default async function InvoicesPage(props: { searchParams: Promise<SearchParams> }) {
+  const searchParams = await props.searchParams
   const status = STATUSES.includes(searchParams.status as InvoiceStatusFilter)
     ? (searchParams.status as InvoiceStatusFilter)
     : 'all'

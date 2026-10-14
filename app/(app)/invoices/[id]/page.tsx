@@ -17,7 +17,8 @@ import { displayNumber, todayISO } from '@/lib/status'
 import type { InvoiceEventType } from '@/lib/types'
 import { cn } from '@/lib/utils'
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const params = await props.params
   const [inv, t, tc] = await Promise.all([getDataSource().getInvoice(params.id), getTranslations('meta'), getTranslations('common')])
   return { title: t('invoice', { number: inv ? displayNumber(inv, tc('draft')) : '' }) }
 }
@@ -31,7 +32,8 @@ const EVENT_META: Record<InvoiceEventType, { icon: typeof Send; color: string }>
   cancelled: { icon: Ban, color: 'text-danger-600' },
 }
 
-export default async function InvoiceDetailPage({ params }: { params: { id: string } }) {
+export default async function InvoiceDetailPage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params
   const ds = getDataSource()
   const [org, invoice] = await Promise.all([requireOrganization(), ds.getInvoice(params.id)])
   if (!invoice) notFound()

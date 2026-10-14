@@ -11,7 +11,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: t('editInvoice') }
 }
 
-export default async function EditInvoicePage({ params }: { params: { id: string } }) {
+export default async function EditInvoicePage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params
   const ds = getDataSource()
   const [org, invoice] = await Promise.all([requireOrganization(), ds.getInvoice(params.id)])
   if (!invoice) notFound()

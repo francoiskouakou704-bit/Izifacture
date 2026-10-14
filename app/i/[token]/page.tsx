@@ -20,7 +20,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 export const dynamic = 'force-dynamic'
 
-export default async function PublicInvoicePage({ params }: { params: { token: string } }) {
+export default async function PublicInvoicePage(props: { params: Promise<{ token: string }> }) {
+  const params = await props.params
   const ds = getDataSource()
   const found = await ds.getInvoiceByToken(params.token)
   if (!found) notFound()

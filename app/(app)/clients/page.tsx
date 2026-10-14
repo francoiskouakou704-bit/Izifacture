@@ -8,7 +8,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: t('clients') }
 }
 
-export default async function ClientsPage({ searchParams }: { searchParams: { q?: string; archived?: string } }) {
+export default async function ClientsPage(props: { searchParams: Promise<{ q?: string; archived?: string }> }) {
+  const searchParams = await props.searchParams
   const q = searchParams.q?.slice(0, 100) ?? ''
   const showArchived = searchParams.archived === '1'
   const clients = await getDataSource().listClients({ q, includeArchived: showArchived })

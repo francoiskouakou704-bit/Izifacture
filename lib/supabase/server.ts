@@ -9,8 +9,8 @@ import type { Database } from './database.types'
  * Client Supabase lié à la session de l'utilisateur (cookies) : toutes les requêtes
  * passent par la RLS. Mémoïsé par requête.
  */
-export const createSupabaseServerClient = cache(() => {
-  const cookieStore = cookies()
+export const createSupabaseServerClient = cache(async () => {
+  const cookieStore = await cookies()
   return createServerClient<Database>(SUPABASE_URL, SUPABASE_ANON_KEY, {
     cookies: {
       getAll: () => cookieStore.getAll(),
