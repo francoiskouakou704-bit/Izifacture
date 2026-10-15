@@ -10,6 +10,9 @@ const nextConfig = {
   experimental: {
     // Logo jusqu'à 2 Mo, transmis en base64 (~ +33 %)
     serverActions: { bodySizeLimit: '3mb' },
+    // Pages déjà visitées réaffichées sans rechargement pendant 30 s ; les Server Actions
+    // (revalidatePath) vident ce cache, les données modifiées restent donc à jour.
+    staleTimes: { dynamic: 30 },
   },
 }
 

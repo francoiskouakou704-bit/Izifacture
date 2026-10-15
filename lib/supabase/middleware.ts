@@ -15,8 +15,9 @@ export async function updateSession(request: NextRequest) {
       },
     },
   })
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  // getClaims rafraîchit la session si besoin puis vérifie le JWT localement (clés asymétriques) :
+  // la navigation n'attend plus un appel réseau à Supabase Auth.
+  const { data } = await supabase.auth.getClaims()
+  const user = data?.claims?.sub ? { id: data.claims.sub } : null
   return { response: () => response, user }
 }

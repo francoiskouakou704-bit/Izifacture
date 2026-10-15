@@ -211,15 +211,17 @@ async function fetchInvoice(id: string): Promise<Invoice | null> {
 
 export const supabaseDataSource: DataSource = {
   async getCurrentUser(): Promise<CurrentUser | null> {
-    const {
-      data: { user },
-    } = await (await db()).auth.getUser()
-    if (!user) return null
-    const { data: profile } = await (await db()).from('profiles').select('full_name, avatar_url').eq('id', user.id).maybeSingle()
+    // getClaims vérifie la signature du JWT localement (clés asymétriques, JWKS mis en cache) :
+    // pas d'aller-retour vers Supabase Auth à chaque page, contrairement à getUser().
+    const { data } = await (await db()).auth.getClaims()
+    const claims = data?.claims
+    if (!claims?.sub) return null
+    const email = claims.email ?? ''
+    const { data: profile } = await (await db()).from('profiles').select('full_name, avatar_url').eq('id', claims.sub).maybeSingle()
     return {
-      id: user.id,
-      email: user.email ?? '',
-      fullName: profile?.full_name || (user.user_metadata?.full_name as string | undefined) || user.email?.split('@')[0] || '',
+      id: claims.sub,
+      email,
+      fullName: profile?.full_name || (claims.user_metadata?.full_name as string | undefined) || email.split('@')[0] || '',
       avatarUrl: opt(profile?.avatar_url),
     }
   },
