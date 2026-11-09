@@ -25,6 +25,21 @@ test.describe('landing page', () => {
     await expect(page.getByRole('tab', { name: 'Inscription' })).toHaveAttribute('aria-selected', 'true')
   })
 
+  test('section téléchargement : liens vers la dernière Release pour chaque système', async ({ page }) => {
+    await page.goto('/#telecharger')
+    const latest = 'https://github.com/francoiskouakou704-bit/Izifacture/releases/latest/download/'
+    for (const [name, file] of [
+      ['Télécharger pour Windows', 'iziFacture-Windows.exe'],
+      ['Télécharger pour Mac', 'iziFacture-Mac.dmg'],
+      ['Télécharger pour Linux', 'iziFacture-Linux.AppImage'],
+    ]) {
+      await expect(page.getByRole('link', { name })).toHaveAttribute('href', latest + file)
+    }
+    await expect(page.getByRole('link', { name: /Paquet \.deb/ })).toHaveAttribute('href', latest + 'iziFacture-Linux.deb')
+    // Navigateur de test sous Windows / Linux / macOS : une carte est mise en avant
+    await expect(page.getByText('Recommandé pour votre ordinateur')).toHaveCount(1)
+  })
+
   test('menu mobile : s’ouvre, navigue et se referme', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 800 })
     await page.goto('/')

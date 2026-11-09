@@ -47,7 +47,7 @@ function scrollToHash(hash: string) {
 
 /**
  * Bouton-lien de la landing : enfoncement + onde au clic, défilement doux pour les ancres.
- * Les liens vers d'autres pages (/signup…) passent par le routeur Next.
+ * Les liens vers d'autres pages de l'app (/signup…) passent par le routeur Next.
  */
 export function CtaButton({
   href,
@@ -79,7 +79,8 @@ export function CtaButton({
     onNavigate?.()
   }
 
-  if (href.startsWith('#')) {
+  // Ancre de la page ou lien externe (téléchargement…) : simple <a>, hors du routeur Next
+  if (href.startsWith('#') || /^https?:\/\//.test(href)) {
     return (
       <a href={href} onClick={onClick} className={classes}>
         {children}

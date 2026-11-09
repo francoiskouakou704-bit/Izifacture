@@ -166,6 +166,54 @@ export const steps = {
   ],
 }
 
+// Application de bureau : fichiers publiés par .github/workflows/desktop.yml (noms fixes,
+// la dernière Release GitHub est toujours servie par « releases/latest/download »).
+const RELEASES = 'https://github.com/francoiskouakou704-bit/Izifacture/releases'
+const latest = (file: string) => `${RELEASES}/latest/download/${file}`
+
+export type Platform = 'windows' | 'mac' | 'linux'
+
+export const download = {
+  eyebrow: 'Application de bureau',
+  title: 'iziFacture aussi sur votre ordinateur',
+  subtitle:
+    'Installez l’application sur Windows, Mac ou Linux : une fenêtre dédiée, une icône sur votre bureau, et les mêmes données que sur le web et votre téléphone.',
+  recommended: 'Recommandé pour votre ordinateur',
+  platforms: [
+    {
+      id: 'windows',
+      name: 'Windows',
+      requirements: 'Windows 10 et 11 (64 bits)',
+      button: 'Télécharger pour Windows',
+      href: latest('iziFacture-Windows.exe'),
+      format: 'Installateur .exe',
+    },
+    {
+      id: 'mac',
+      name: 'macOS',
+      requirements: 'macOS 12 ou plus récent · Intel et Apple Silicon',
+      button: 'Télécharger pour Mac',
+      href: latest('iziFacture-Mac.dmg'),
+      format: 'Image disque .dmg',
+    },
+    {
+      id: 'linux',
+      name: 'Linux',
+      requirements: 'Ubuntu, Debian, Fedora… (64 bits)',
+      button: 'Télécharger pour Linux',
+      href: latest('iziFacture-Linux.AppImage'),
+      format: 'AppImage',
+      alternative: { label: 'Paquet .deb (Ubuntu / Debian)', href: latest('iziFacture-Linux.deb') },
+    },
+  ] as { id: Platform; name: string; requirements: string; button: string; href: string; format: string; alternative?: { label: string; href: string } }[],
+  mobileNote: 'Sur téléphone, pas besoin d’installer quoi que ce soit : iziFacture fonctionne directement dans votre navigateur.',
+  notes: [
+    'Connexion Internet nécessaire : vos factures sont synchronisées en temps réel avec votre compte.',
+    'Première ouverture : Windows ou macOS peuvent afficher un avertissement de sécurité, l’application n’étant pas encore signée. Sur Windows, cliquez sur « Informations complémentaires » puis « Exécuter quand même » ; sur Mac, faites un clic droit sur l’app puis « Ouvrir ».',
+  ],
+  allVersions: { label: 'Toutes les versions', href: RELEASES },
+}
+
 export const testimonials = {
   eyebrow: 'Avis clients',
   title: 'Ils ont simplifié leur facturation',
@@ -218,6 +266,7 @@ export const footer = {
         { label: 'TVA automatique', href: '#fonctionnalites' },
         { label: 'Partage WhatsApp', href: '#fonctionnalites' },
         { label: 'Suivi des paiements', href: '#fonctionnalites' },
+        { label: 'Application de bureau', href: '#telecharger' },
       ],
     },
     {

@@ -1,4 +1,5 @@
 import { CtaBanner } from './sections/cta-banner'
+import { DownloadSection } from './sections/download-section'
 import { FaqSection } from './sections/faq-section'
 import { FeaturesSection } from './sections/features-section'
 import { Hero } from './sections/hero'
@@ -18,6 +19,7 @@ export function LandingPage() {
         <ProblemsSection />
         <FeaturesSection />
         <HowItWorksSection />
+        <DownloadSection />
         <FaqSection />
         <CtaBanner />
       </main>
