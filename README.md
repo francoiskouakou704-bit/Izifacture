@@ -47,6 +47,28 @@ Test sur la vraie base (`npm run test:live`) : parcours complet + isolation entr
 Nécessite deux comptes de test sans entreprise et un serveur lancé :
 `LIVE_BASE_URL=http://localhost:3000 LIVE_EMAIL_A=… LIVE_EMAIL_B=… LIVE_PASSWORD=… npm run test:live`
 
+## Application de bureau (Windows, macOS, Linux)
+
+Le dossier `desktop/` contient une app [Electron](https://www.electronjs.org/) : une fenêtre native qui
+affiche l'app en ligne (données dans Supabase, synchronisées avec le web, toujours à jour).
+Les liens externes (WhatsApp, email) s'ouvrent dans le navigateur du système ; une page dédiée
+s'affiche hors connexion.
+
+```bash
+cd desktop
+npm install
+npm start            # lance l'app en local (IZI_APP_URL=http://localhost:3000 pour viser le serveur local)
+npm run dist:win     # installateur Windows dans desktop/dist (macOS et Linux : sur leur système)
+```
+
+Publier une version : augmenter `version` dans `desktop/package.json`, puis pousser un tag
+`desktop-vX.Y.Z` (ex. `git tag desktop-v1.0.1 && git push origin desktop-v1.0.1`). Le workflow
+`.github/workflows/desktop.yml` compile les trois systèmes et crée la Release GitHub ; les boutons
+de la landing pointent vers la dernière Release (`…/releases/latest/download/iziFacture-Windows.exe`…).
+
+L'app n'est pas signée (certificats payants) : Windows SmartScreen et macOS Gatekeeper
+affichent un avertissement à la première ouverture.
+
 ## Langues
 
 Français et anglais, sans préfixe d'URL (`next-intl`) : la langue vient du cookie `NEXT_LOCALE`

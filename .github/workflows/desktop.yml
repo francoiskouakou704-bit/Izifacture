@@ -1,0 +1,93 @@
+name: Application de bureau
+
+# Compile l'app iziFacture pour Windows, macOS et Linux.
+# - Lancement manuel (onglet Actions) : compile et garde les fichiers en artefacts, pour tester.
+# - Tag « desktop-vX.Y.Z » : compile puis publie une Release GitHub ; les boutons de
+#   téléchargement de la landing pointent vers la dernière Release (noms de fichiers fixes).
+
+on:
+  push:
+    tags: ['desktop-v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: desktop-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Compilation (${{ matrix.name }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Windows
+            os: windows-latest
+            target: --win
+          - name: macOS
+            os: macos-latest
+            target: --mac
+          - name: Linux
+            os: ubuntu-latest
+            target: --linux
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: desktop
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - name: Compilation
+        run: npx electron-builder ${{ matrix.target }} --publish never
+        env:
+          # Pas de certificat de signature : l'app n'est pas signée (voir README)
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iziFacture-${{ matrix.name }}
+          path: |
+            desktop/dist/*.exe
+            desktop/dist/*.dmg
+            desktop/dist/*.AppImage
+            desktop/dist/*.deb
+          if-no-files-found: error
+
+  release:
+    name: Publication de la Release
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/desktop-v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Création de la Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          ls -la dist
+          gh release create "$TAG" dist/* \
+            --repo "${{ github.repository }}" \
+            --title "iziFacture ${TAG#desktop-}" \
+            --notes "Application de bureau iziFacture pour Windows, macOS et Linux.
+
+          - Windows : iziFacture-Windows.exe
+          - macOS (Intel et Apple Silicon) : iziFacture-Mac.dmg
+          - Linux : iziFacture-Linux.AppImage ou iziFacture-Linux.deb
+
+          L'application n'est pas encore signée : Windows et macOS affichent un avertissement à la première ouverture."

@@ -1,0 +1,90 @@
+{
+  "name": "izifacture-desktop",
+  "productName": "iziFacture",
+  "version": "1.0.0",
+  "description": "iziFacture — la facturation pour les entrepreneurs africains, sur votre ordinateur.",
+  "homepage": "https://izifacture-weld-rho.vercel.app",
+  "author": {
+    "name": "iziFacture",
+    "email": "support@izifacture.com"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "src/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --publish never",
+    "dist:win": "electron-builder --win --publish never",
+    "dist:mac": "electron-builder --mac --publish never",
+    "dist:linux": "electron-builder --linux --publish never"
+  },
+  "devDependencies": {
+    "electron": "45.2.3",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "com.izifacture.desktop",
+    "productName": "iziFacture",
+    "copyright": "© iziFacture",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "build/icon.png",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "artifactName": "iziFacture-Windows.${ext}"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "shortcutName": "iziFacture",
+      "uninstallDisplayName": "iziFacture",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "installerLanguages": ["fr_FR"],
+      "language": "1036"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["universal"]
+        }
+      ],
+      "category": "public.app-category.business",
+      "artifactName": "iziFacture-Mac.${ext}",
+      "identity": "-",
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false
+    },
+    "dmg": {
+      "title": "iziFacture"
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": ["x64"]
+        },
+        {
+          "target": "deb",
+          "arch": ["x64"]
+        }
+      ],
+      "category": "Office",
+      "synopsis": "Facturation pour entrepreneurs africains",
+      "artifactName": "iziFacture-Linux.${ext}",
+      "executableName": "izifacture"
+    }
+  }
+}

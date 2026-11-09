@@ -49,3 +49,7 @@ supabase/.branches/
 
 # divers
 *.log
+
+# application de bureau (Electron)
+/desktop/node_modules
+/desktop/dist
