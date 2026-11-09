@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { isSupabaseEnabled } from '@/lib/supabase/config'
 import { updateSession } from '@/lib/supabase/middleware'
 
-// Pages accessibles sans session.
+// Pages accessibles sans session (la landing « / » est traitée à part : correspondance exacte).
 const PUBLIC_PREFIXES = ['/login', '/signup', '/forgot-password', '/auth', '/i/']
 // Pages réservées aux visiteurs non connectés.
 const GUEST_ONLY = ['/login', '/signup', '/forgot-password']
@@ -34,10 +34,12 @@ export async function middleware(request: NextRequest) {
     return res
   }
 
-  if (!user && !matches(pathname, PUBLIC_PREFIXES)) {
+  const isHome = pathname === '/'
+  if (!user && !isHome && !matches(pathname, PUBLIC_PREFIXES)) {
     return redirect('/login', pathname === '/' ? undefined : pathname + request.nextUrl.search)
   }
-  if (user && matches(pathname, GUEST_ONLY)) return redirect('/dashboard')
+  // Connecté : la landing et les écrans d'accès mènent directement à l'app
+  if (user && (isHome || matches(pathname, GUEST_ONLY))) return redirect('/dashboard')
 
   return response()
 }

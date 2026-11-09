@@ -61,6 +61,11 @@ const config: Config = {
           600: '#F03E3E',
           700: '#C92A2A',
         },
+        // Landing page : indigo profond de la marque
+        ink: {
+          DEFAULT: '#0D1326',
+          soft: '#1E293B',
+        },
         // Dark mode surfaces
         dark: {
           bg:     '#0F1117',
@@ -91,6 +96,10 @@ const config: Config = {
         'lg':  '0 10px 40px -4px rgb(0 0 0 / 0.12), 0 4px 16px -4px rgb(0 0 0 / 0.08)',
         'xl':  '0 20px 60px -8px rgb(0 0 0 / 0.14)',
         'ring': '0 0 0 3px rgb(59 91 219 / 0.25)',
+        // Landing page
+        'subtle-card': '0 20px 40px -15px rgb(15 23 42 / 0.07)',
+        'floating': '0 25px 50px -12px rgb(13 19 38 / 0.12)',
+        'pill': '0 4px 14px 0 rgb(13 19 38 / 0.15)',
         'ring-danger': '0 0 0 3px rgb(201 42 42 / 0.25)',
       },
       spacing: {

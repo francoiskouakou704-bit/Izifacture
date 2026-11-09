@@ -4,6 +4,7 @@ import { expect, test } from '@playwright/test'
 // (Bug réel corrigé : un `sr-only` absolu dans un <th> élargissait toute la page.)
 
 const PAGES = [
+  '/',
   '/dashboard',
   '/invoices',
   '/invoices?status=paid',

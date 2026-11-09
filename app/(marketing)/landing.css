@@ -1,0 +1,234 @@
+/*
+ * Styles propres à la landing page.
+ * Les mises en page passent par Tailwind (dans les composants) ; ce fichier regroupe
+ * ce que les utilitaires n'expriment pas bien : animations, effets au clic, accordéon,
+ * en-tête au défilement. Toutes les classes sont préfixées « lp- ».
+ */
+
+.lp-root {
+  --lp-ink: #0d1326;
+  --lp-header-h: 4.5rem;
+  font-family: var(--font-plus-jakarta), var(--font-inter), system-ui, sans-serif;
+  background-color: #fafbfc;
+  color: #0f172a;
+  overflow-x: clip;
+}
+
+/* Les ancres (#fonctionnalites…) ne passent pas sous l'en-tête collant */
+.lp-root section[id] {
+  scroll-margin-top: calc(var(--lp-header-h) + 1rem);
+}
+
+/* ─── En-tête ─────────────────────────────────────────────── */
+.lp-header {
+  transition:
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+.lp-header[data-scrolled='true'] {
+  background-color: rgb(250 251 252 / 0.95);
+  box-shadow: 0 8px 24px -16px rgb(13 19 38 / 0.25);
+}
+
+/* Lien de navigation : soulignement qui se déploie au survol */
+.lp-nav-link {
+  position: relative;
+}
+.lp-nav-link::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--lp-ink);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+.lp-nav-link:hover::after,
+.lp-nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Menu mobile : glisse depuis le haut */
+.lp-mobile-menu {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.3s ease,
+    opacity 0.2s ease;
+}
+.lp-mobile-menu[data-open='true'] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.lp-mobile-menu > div {
+  overflow: hidden;
+}
+
+/* Icône burger → croix */
+.lp-burger span {
+  display: block;
+  height: 2px;
+  width: 1.25rem;
+  border-radius: 2px;
+  background: currentColor;
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease;
+}
+.lp-burger span + span {
+  margin-top: 5px;
+}
+.lp-burger[aria-expanded='true'] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.lp-burger[aria-expanded='true'] span:nth-child(2) {
+  opacity: 0;
+}
+.lp-burger[aria-expanded='true'] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ─── Boutons : enfoncement + onde au clic ───────────────── */
+.lp-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+.lp-btn:hover {
+  transform: translateY(-1px);
+}
+.lp-btn:active {
+  transform: translateY(0) scale(0.96);
+}
+.lp-ripple {
+  position: absolute;
+  z-index: -1;
+  border-radius: 9999px;
+  pointer-events: none;
+  background: currentColor;
+  opacity: 0.25;
+  transform: scale(0);
+  animation: lp-ripple 0.6s ease-out forwards;
+}
+@keyframes lp-ripple {
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* ─── Cartes ─────────────────────────────────────────────── */
+.lp-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+.lp-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Cartes flottantes autour de la maquette */
+.lp-float-1 {
+  animation: lp-float 6s ease-in-out infinite;
+}
+.lp-float-2 {
+  animation: lp-float-reverse 7s ease-in-out infinite;
+}
+@keyframes lp-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+@keyframes lp-float-reverse {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(7px) rotate(-1.5deg);
+  }
+}
+
+/* ─── Apparition au défilement ───────────────────────────── */
+.lp-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--lp-delay, 0ms);
+}
+.lp-reveal[data-visible='true'] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Entrée au chargement (haut de page) : CSS pur, n'attend pas le JavaScript */
+.lp-enter {
+  animation: lp-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--lp-delay, 0ms);
+}
+@keyframes lp-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+/* ─── FAQ : ouverture animée ─────────────────────────────── */
+.lp-faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+.lp-faq-panel[data-open='true'] {
+  grid-template-rows: 1fr;
+}
+.lp-faq-panel > div {
+  overflow: hidden;
+}
+.lp-faq-chevron {
+  transition: transform 0.3s ease;
+}
+[aria-expanded='true'] > .lp-faq-chevron {
+  transform: rotate(180deg);
+}
+
+/* ─── Accessibilité : pas d'animation si l'utilisateur le demande ─ */
+@media (prefers-reduced-motion: reduce) {
+  .lp-float-1,
+  .lp-float-2,
+  .lp-ripple,
+  .lp-enter {
+    animation: none;
+  }
+  .lp-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .lp-btn,
+  .lp-card,
+  .lp-mobile-menu,
+  .lp-faq-panel,
+  .lp-faq-chevron {
+    transition: none;
+  }
+  .lp-btn:hover,
+  .lp-card:hover {
+    transform: none;
+  }
+}
