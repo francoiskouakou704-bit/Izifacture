@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "My account",
-      "description": "Password management will come with authentication.",
+      "description": "Your name appears across the app and in your invoice history.",
       "fullName": "Full name",
       "email": "Email",
       "preferences": "Preferences",
       "preferencesDescription": "Language of the interface and of the invoices you view.",
-      "language": "Language"
+      "language": "Language",
+      "nameUpdated": "Name updated"
     }
   },
   "onboarding": {
@@ -489,10 +490,10 @@
   "auth": {
     "welcomeBack": "Welcome back!",
     "loginSubtitle": "Log in to your account",
-    "email": "Email",
-    "emailPlaceholder": "you@example.com",
+    "email": "Email address",
+    "emailPlaceholder": "you@company.com",
     "password": "Password",
-    "forgot": "Forgot?",
+    "forgot": "Forgot password?",
     "login": "Log in",
     "orContinue": "or continue with",
     "google": "Continue with Google",
@@ -524,7 +525,10 @@
     "newPassword": "New password",
     "updatePassword": "Save password",
     "passwordUpdated": "Password updated",
-    "linkInvalid": "This link is invalid or has expired. Please try again."
+    "linkInvalid": "This link is invalid or has expired. Please try again.",
+    "tabLogin": "Log in",
+    "tabSignup": "Sign up",
+    "tagline": "Manage your invoices with ease."
   },
   "states": {
     "errorTitle": "Something went wrong",

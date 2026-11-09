@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Iakhawunti yam",
-      "description": "Ulawulo lwephasiwedi luza kufika nongqinisiso.",
+      "description": "Igama lakho libonakala kwi-app nakwimbali yee-invoyisi zakho.",
       "fullName": "Igama elipheleleyo",
       "email": "I-imeyile",
       "preferences": "Ukhetho",
       "preferencesDescription": "Ulwimi lojongano kunye nolwee-invoyisi ozijongayo.",
-      "language": "Ulwimi"
+      "language": "Ulwimi",
+      "nameUpdated": "Igama lihlaziyiwe"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Igama lokugqitha elitsha",
     "updatePassword": "Gcina igama lokugqitha",
     "passwordUpdated": "Igama lokugqitha lihlaziyiwe",
-    "linkInvalid": "Eli khonkco alisebenzi okanye liphelelwe lixesha. Zama kwakhona."
+    "linkInvalid": "Eli khonkco alisebenzi okanye liphelelwe lixesha. Zama kwakhona.",
+    "tabLogin": "Ngena",
+    "tabSignup": "Bhalisa",
+    "tagline": "Lawula ii-invoyisi zakho ngokulula."
   },
   "states": {
     "errorTitle": "Kwenzeke impazamo",

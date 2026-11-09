@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Konti yanjye",
-      "description": "Gucunga ijambo ry’ibanga bizaza hamwe no kwinjira.",
+      "description": "Izina ryawe rigaragara muri porogaramu no mu mateka ya fagitire zawe.",
       "fullName": "Amazina yose",
       "email": "Imeyili",
       "preferences": "Ibyo ukunda",
       "preferencesDescription": "Ururimi rwa porogaramu n’urw’inyemezabuguzi ureba.",
-      "language": "Ururimi"
+      "language": "Ururimi",
+      "nameUpdated": "Izina ryavuguruwe"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Ijambo ry’ibanga rishya",
     "updatePassword": "Bika ijambo ry’ibanga",
     "passwordUpdated": "Ijambo ry’ibanga ryavuguruwe",
-    "linkInvalid": "Uyu murongo ntukora cyangwa warangiye. Ongera ugerageze."
+    "linkInvalid": "Uyu murongo ntukora cyangwa warangiye. Ongera ugerageze.",
+    "tabLogin": "Injira",
+    "tabSignup": "Iyandikishe",
+    "tagline": "Cunga inyemezabuguzi zawe byoroshye."
   },
   "states": {
     "errorTitle": "Habaye ikosa",

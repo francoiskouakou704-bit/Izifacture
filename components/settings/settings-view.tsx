@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 import { useRef } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { toast } from 'sonner'
-import { updateCompanyAction, updateInvoicingDefaultsAction, updateLogoAction } from '@/actions/settings'
+import { updateCompanyAction, updateInvoicingDefaultsAction, updateLogoAction, updateProfileAction } from '@/actions/settings'
 import { LocaleSwitcher } from '@/components/layout/locale-switcher'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
@@ -17,6 +17,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { useAction } from '@/lib/hooks/use-action'
 import { useErrorMessage } from '@/lib/i18n/client'
 import { CURRENCIES, type CurrentUser, type Organization } from '@/lib/types'
+import { profileSchema, type ProfileInput } from '@/lib/validations/auth'
 import {
   LOGO_MAX_BYTES,
   LOGO_MIME_TYPES,
@@ -238,17 +239,36 @@ function InvoicingForm({ org }: { org: Organization }) {
 
 function AccountTab({ user }: { user: CurrentUser }) {
   const t = useTranslations('settings.account')
+  const tc = useTranslations('common')
+  const e = useErrorMessage()
+  const { pending, run } = useAction()
+  const { register, handleSubmit, reset, formState: { errors, isDirty } } = useForm<ProfileInput>({
+    resolver: zodResolver(profileSchema),
+    defaultValues: { fullName: user.fullName },
+  })
+
+  const onSubmit = handleSubmit((data) =>
+    run(() => updateProfileAction(data), { success: t('nameUpdated'), onSuccess: () => reset(data) })
+  )
+
   return (
     <div className="grid max-w-3xl grid-cols-1 gap-5">
       <Card>
-        <CardHeader>
-          <CardTitle>{t('title')}</CardTitle>
-          <CardDescription>{t('description')}</CardDescription>
-        </CardHeader>
-        <CardContent className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <Input label={t('fullName')} value={user.fullName} readOnly leftIcon={<User className="h-4 w-4" />} className="bg-gray-50 dark:bg-dark-elevated" />
-          <Input label={t('email')} value={user.email} readOnly leftIcon={<Mail className="h-4 w-4" />} className="bg-gray-50 dark:bg-dark-elevated" />
-        </CardContent>
+        <form onSubmit={onSubmit} noValidate>
+          <CardHeader>
+            <CardTitle>{t('title')}</CardTitle>
+            <CardDescription>{t('description')}</CardDescription>
+          </CardHeader>
+          <CardContent className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <Input label={t('fullName')} autoComplete="name" leftIcon={<User className="h-4 w-4" />} error={e(errors.fullName?.message)} {...register('fullName')} />
+            <Input label={t('email')} value={user.email} readOnly leftIcon={<Mail className="h-4 w-4" />} className="bg-gray-50 dark:bg-dark-elevated" />
+          </CardContent>
+          <CardFooter className="justify-end">
+            <Button type="submit" loading={pending} disabled={!isDirty}>
+              {tc('save')}
+            </Button>
+          </CardFooter>
+        </form>
       </Card>
       <Card>
         <CardHeader>

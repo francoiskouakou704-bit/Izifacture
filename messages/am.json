@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "የእኔ መለያ",
-      "description": "የይለፍ ቃል አስተዳደር ከማረጋገጫ ጋር ይመጣል።",
+      "description": "ስምዎ በመተግበሪያው ውስጥ እና በደረሰኝ ታሪክዎ ውስጥ ይታያል።",
       "fullName": "ሙሉ ስም",
       "email": "ኢሜል",
       "preferences": "ምርጫዎች",
       "preferencesDescription": "የበይነገጹ እና የሚመለከቷቸው ደረሰኞች ቋንቋ።",
-      "language": "ቋንቋ"
+      "language": "ቋንቋ",
+      "nameUpdated": "ስም ተዘምኗል"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "አዲስ የይለፍ ቃል",
     "updatePassword": "የይለፍ ቃል አስቀምጥ",
     "passwordUpdated": "የይለፍ ቃል ተዘምኗል",
-    "linkInvalid": "ይህ አገናኝ ልክ ያልሆነ ወይም ጊዜው ያለፈበት ነው። እንደገና ይሞክሩ።"
+    "linkInvalid": "ይህ አገናኝ ልክ ያልሆነ ወይም ጊዜው ያለፈበት ነው። እንደገና ይሞክሩ።",
+    "tabLogin": "ግባ",
+    "tabSignup": "ተመዝገብ",
+    "tagline": "ደረሰኞችዎን በቀላሉ ያስተዳድሩ።"
   },
   "states": {
     "errorTitle": "ስህተት ተከስቷል",

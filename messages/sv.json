@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Mitt konto",
-      "description": "Lösenordshantering kommer med autentiseringen.",
+      "description": "Ditt namn visas i appen och i historiken för dina fakturor.",
       "fullName": "Fullständigt namn",
       "email": "E-post",
       "preferences": "Inställningar",
       "preferencesDescription": "Språk för gränssnittet och för fakturorna du visar.",
-      "language": "Språk"
+      "language": "Språk",
+      "nameUpdated": "Namnet har uppdaterats"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Nytt lösenord",
     "updatePassword": "Spara lösenord",
     "passwordUpdated": "Lösenordet har uppdaterats",
-    "linkInvalid": "Länken är ogiltig eller har gått ut. Försök igen."
+    "linkInvalid": "Länken är ogiltig eller har gått ut. Försök igen.",
+    "tabLogin": "Logga in",
+    "tabSignup": "Registrera dig",
+    "tagline": "Hantera dina fakturor enkelt."
   },
   "states": {
     "errorTitle": "Något gick fel",

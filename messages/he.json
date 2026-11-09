@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "החשבון שלי",
-      "description": "ניהול הסיסמה יגיע יחד עם מערכת ההתחברות.",
+      "description": "השם שלך מופיע באפליקציה ובהיסטוריית החשבוניות שלך.",
       "fullName": "שם מלא",
       "email": "אימייל",
       "preferences": "העדפות",
       "preferencesDescription": "שפת הממשק והחשבוניות שאתם צופים בהן.",
-      "language": "שפה"
+      "language": "שפה",
+      "nameUpdated": "השם עודכן"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "סיסמה חדשה",
     "updatePassword": "שמירת הסיסמה",
     "passwordUpdated": "הסיסמה עודכנה",
-    "linkInvalid": "הקישור אינו תקף או שפג תוקפו. נסו שוב."
+    "linkInvalid": "הקישור אינו תקף או שפג תוקפו. נסו שוב.",
+    "tabLogin": "התחברות",
+    "tabSignup": "הרשמה",
+    "tagline": "נהלו את החשבוניות שלכם בקלות."
   },
   "states": {
     "errorTitle": "אירעה שגיאה",

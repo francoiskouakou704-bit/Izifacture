@@ -90,7 +90,31 @@ test.describe('multilingue', () => {
     const context = await browser.newContext({ locale: 'en-US' })
     const page = await context.newPage()
     await page.goto('/login')
-    await expect(page.getByRole('heading', { name: 'Welcome back!' })).toBeVisible()
+    await expect(page.getByRole('tab', { name: 'Log in' })).toHaveAttribute('aria-selected', 'true')
     await context.close()
+  })
+})
+
+test.describe('connexion / inscription', () => {
+  test('les deux formulaires partagent la même carte à onglets', async ({ page }) => {
+    await page.goto('/login?next=%2Finvoices')
+    await expect(page.getByRole('tab', { name: 'Connexion' })).toHaveAttribute('aria-selected', 'true')
+    await expect(page.getByLabel('Nom complet')).toHaveCount(0)
+
+    // Bascule sans rechargement ; l'URL suit et garde ses paramètres
+    await page.getByRole('tab', { name: 'Inscription' }).click()
+    await expect(page.getByLabel('Nom complet')).toBeVisible()
+    await expect(page.getByRole('button', { name: 'Créer mon compte' })).toBeVisible()
+    await expect(page).toHaveURL(/\/signup\?next=%2Finvoices$/)
+
+    await page.getByRole('tab', { name: 'Connexion' }).click()
+    await expect(page.getByRole('button', { name: 'Se connecter' })).toBeVisible()
+    await expect(page).toHaveURL(/\/login\?next=%2Finvoices$/)
+  })
+
+  test('/signup ouvre directement l’onglet Inscription', async ({ page }) => {
+    await page.goto('/signup')
+    await expect(page.getByRole('tab', { name: 'Inscription' })).toHaveAttribute('aria-selected', 'true')
+    await expect(page.getByLabel('Nom complet')).toBeVisible()
   })
 })

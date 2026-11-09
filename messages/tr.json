@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Hesabım",
-      "description": "Şifre yönetimi kimlik doğrulamayla birlikte gelecek.",
+      "description": "Adınız uygulamada ve fatura geçmişinizde görünür.",
       "fullName": "Ad soyad",
       "email": "E-posta",
       "preferences": "Tercihler",
       "preferencesDescription": "Arayüzün ve görüntülediğiniz faturaların dili.",
-      "language": "Dil"
+      "language": "Dil",
+      "nameUpdated": "Ad güncellendi"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Yeni şifre",
     "updatePassword": "Şifreyi kaydet",
     "passwordUpdated": "Şifre güncellendi",
-    "linkInvalid": "Bu bağlantı geçersiz veya süresi dolmuş. Lütfen tekrar deneyin."
+    "linkInvalid": "Bu bağlantı geçersiz veya süresi dolmuş. Lütfen tekrar deneyin.",
+    "tabLogin": "Giriş yap",
+    "tabSignup": "Kaydol",
+    "tagline": "Faturalarınızı kolayca yönetin."
   },
   "states": {
     "errorTitle": "Bir hata oluştu",

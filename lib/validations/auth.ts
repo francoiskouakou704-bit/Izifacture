@@ -16,11 +16,16 @@ export const signInSchema = z.object({
   password: z.string().min(1, 'validation.passwordRequired').max(72, 'validation.tooLong'),
 })
 
+const fullName = z.string().trim().min(2, 'validation.nameMin').max(120, 'validation.tooLong')
+
 export const signUpSchema = z.object({
-  fullName: z.string().trim().min(2, 'validation.nameMin').max(120, 'validation.tooLong'),
+  fullName,
   email,
   password: newPassword,
 })
+
+export const profileSchema = z.object({ fullName })
+export type ProfileInput = z.input<typeof profileSchema>
 
 export const forgotPasswordSchema = z.object({ email })
 export const resetPasswordSchema = z.object({ password: newPassword })

@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Mon compte",
-      "description": "La gestion du mot de passe arrive avec l’authentification.",
+      "description": "Votre nom apparaît dans l’application et dans l’historique de vos factures.",
       "fullName": "Nom complet",
       "email": "Email",
       "preferences": "Préférences",
       "preferencesDescription": "Langue de l’interface et des factures que vous consultez.",
-      "language": "Langue"
+      "language": "Langue",
+      "nameUpdated": "Nom mis à jour"
     }
   },
   "onboarding": {
@@ -489,10 +490,10 @@
   "auth": {
     "welcomeBack": "Bon retour !",
     "loginSubtitle": "Connectez-vous à votre compte",
-    "email": "Email",
-    "emailPlaceholder": "vous@exemple.com",
+    "email": "Adresse email",
+    "emailPlaceholder": "vous@entreprise.com",
     "password": "Mot de passe",
-    "forgot": "Oublié ?",
+    "forgot": "Mot de passe oublié ?",
     "login": "Se connecter",
     "orContinue": "ou continuer avec",
     "google": "Continuer avec Google",
@@ -524,7 +525,10 @@
     "newPassword": "Nouveau mot de passe",
     "updatePassword": "Enregistrer le mot de passe",
     "passwordUpdated": "Mot de passe mis à jour",
-    "linkInvalid": "Ce lien est invalide ou a expiré. Recommencez l’opération."
+    "linkInvalid": "Ce lien est invalide ou a expiré. Recommencez l’opération.",
+    "tabLogin": "Connexion",
+    "tabSignup": "Inscription",
+    "tagline": "Gérez vos factures en toute simplicité."
   },
   "states": {
     "errorTitle": "Une erreur est survenue",

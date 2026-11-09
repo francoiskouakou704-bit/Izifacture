@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Ny kaontiko",
-      "description": "Ho avy miaraka amin’ny fidirana ny fitantanana ny teny miafina.",
+      "description": "Miseho ao amin’ny fampiharana sy ao amin’ny tantaran’ny faktioranao ny anaranao.",
       "fullName": "Anarana feno",
       "email": "Mailaka",
       "preferences": "Safidy",
       "preferencesDescription": "Fitenin’ny fampiharana sy ny faktiora jerenao.",
-      "language": "Fiteny"
+      "language": "Fiteny",
+      "nameUpdated": "Voavao ny anarana"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Teny miafina vaovao",
     "updatePassword": "Tehirizo ny teny miafina",
     "passwordUpdated": "Voavao ny teny miafina",
-    "linkInvalid": "Tsy mety na lany daty ity rohy ity. Andramo indray."
+    "linkInvalid": "Tsy mety na lany daty ity rohy ity. Andramo indray.",
+    "tabLogin": "Hiditra",
+    "tabSignup": "Hisoratra anarana",
+    "tagline": "Tantano mora foana ny faktiorao."
   },
   "states": {
     "errorTitle": "Nisy olana",

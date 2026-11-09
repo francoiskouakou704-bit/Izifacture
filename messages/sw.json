@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Akaunti yangu",
-      "description": "Usimamizi wa nenosiri utakuja pamoja na mfumo wa kuingia.",
+      "description": "Jina lako linaonekana kwenye programu na kwenye historia ya ankara zako.",
       "fullName": "Jina kamili",
       "email": "Barua pepe",
       "preferences": "Mapendeleo",
       "preferencesDescription": "Lugha ya kiolesura na ya ankara unazotazama.",
-      "language": "Lugha"
+      "language": "Lugha",
+      "nameUpdated": "Jina limesasishwa"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Nenosiri jipya",
     "updatePassword": "Hifadhi nenosiri",
     "passwordUpdated": "Nenosiri limesasishwa",
-    "linkInvalid": "Kiungo hiki si sahihi au kimeisha muda. Jaribu tena."
+    "linkInvalid": "Kiungo hiki si sahihi au kimeisha muda. Jaribu tena.",
+    "tabLogin": "Ingia",
+    "tabSignup": "Jisajili",
+    "tagline": "Simamia ankara zako kwa urahisi."
   },
   "states": {
     "errorTitle": "Hitilafu imetokea",

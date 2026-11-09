@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Asusuna",
-      "description": "Sarrafa kalmar sirri zai zo tare da tsarin shiga.",
+      "description": "Sunanka yana bayyana a cikin manhajar da kuma tarihin takardun kuɗinka.",
       "fullName": "Cikakken suna",
       "email": "Imel",
       "preferences": "Zaɓuɓɓuka",
       "preferencesDescription": "Harshen manhaja da na takardun kuɗin da kake gani.",
-      "language": "Harshe"
+      "language": "Harshe",
+      "nameUpdated": "An sabunta suna"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Sabuwar kalmar sirri",
     "updatePassword": "Ajiye kalmar sirri",
     "passwordUpdated": "An sabunta kalmar sirri",
-    "linkInvalid": "Wannan hanyar ba ta aiki ko ta ƙare. Sake gwadawa."
+    "linkInvalid": "Wannan hanyar ba ta aiki ko ta ƙare. Sake gwadawa.",
+    "tabLogin": "Shiga",
+    "tabSignup": "Yi rajista",
+    "tagline": "Sarrafa takardun kuɗinka cikin sauƙi."
   },
   "states": {
     "errorTitle": "An sami matsala",

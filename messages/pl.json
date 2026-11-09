@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Moje konto",
-      "description": "Zarządzanie hasłem pojawi się wraz z uwierzytelnianiem.",
+      "description": "Twoje imię i nazwisko jest widoczne w aplikacji i w historii faktur.",
       "fullName": "Imię i nazwisko",
       "email": "E-mail",
       "preferences": "Preferencje",
       "preferencesDescription": "Język interfejsu i przeglądanych faktur.",
-      "language": "Język"
+      "language": "Język",
+      "nameUpdated": "Zaktualizowano imię i nazwisko"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Nowe hasło",
     "updatePassword": "Zapisz hasło",
     "passwordUpdated": "Hasło zaktualizowane",
-    "linkInvalid": "Ten link jest nieprawidłowy lub wygasł. Spróbuj ponownie."
+    "linkInvalid": "Ten link jest nieprawidłowy lub wygasł. Spróbuj ponownie.",
+    "tabLogin": "Zaloguj się",
+    "tabSignup": "Zarejestruj się",
+    "tagline": "Zarządzaj fakturami w prosty sposób."
   },
   "states": {
     "errorTitle": "Wystąpił błąd",

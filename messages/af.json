@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "My rekening",
-      "description": "Wagwoordbestuur kom saam met verifikasie.",
+      "description": "Jou naam verskyn regdeur die toep en in jou faktuurgeskiedenis.",
       "fullName": "Volle naam",
       "email": "E-pos",
       "preferences": "Voorkeure",
       "preferencesDescription": "Taal van die koppelvlak en van die fakture wat jy bekyk.",
-      "language": "Taal"
+      "language": "Taal",
+      "nameUpdated": "Naam bygewerk"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Nuwe wagwoord",
     "updatePassword": "Stoor wagwoord",
     "passwordUpdated": "Wagwoord opgedateer",
-    "linkInvalid": "Hierdie skakel is ongeldig of het verval. Probeer asseblief weer."
+    "linkInvalid": "Hierdie skakel is ongeldig of het verval. Probeer asseblief weer.",
+    "tabLogin": "Meld aan",
+    "tabSignup": "Registreer",
+    "tagline": "Bestuur jou fakture met gemak."
   },
   "states": {
     "errorTitle": "Iets het skeefgeloop",

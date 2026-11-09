@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Konti na ngai",
-      "description": "Kokamba mot de passe ekoya elongo na kokota.",
+      "description": "Nkombo na yo emonanaka na application mpe na lisolo ya bafactire na yo.",
       "fullName": "Nkombo mobimba",
       "email": "Email",
       "preferences": "Oyo olingi",
       "preferencesDescription": "Lokóta ya application mpe ya bafakitire oyo ozali kotala.",
-      "language": "Lokóta"
+      "language": "Lokóta",
+      "nameUpdated": "Nkombo ebongisami"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Mot de passe ya sika",
     "updatePassword": "Bomba mot de passe",
     "passwordUpdated": "Mot de passe ebongisami",
-    "linkInvalid": "Lien oyo ebongi te to eleki ntango. Meka lisusu."
+    "linkInvalid": "Lien oyo ebongi te to eleki ntango. Meka lisusu.",
+    "tabLogin": "Kokɔta",
+    "tabSignup": "Komikomisa",
+    "tagline": "Bobatela bafaktire na yo na pɛtɛɛ."
   },
   "states": {
     "errorTitle": "Libunga moko esalemi",

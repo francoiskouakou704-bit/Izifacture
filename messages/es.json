@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Mi cuenta",
-      "description": "La gestión de la contraseña llegará con la autenticación.",
+      "description": "Tu nombre aparece en la aplicación y en el historial de tus facturas.",
       "fullName": "Nombre completo",
       "email": "Correo",
       "preferences": "Preferencias",
       "preferencesDescription": "Idioma de la interfaz y de las facturas que consultas.",
-      "language": "Idioma"
+      "language": "Idioma",
+      "nameUpdated": "Nombre actualizado"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Nueva contraseña",
     "updatePassword": "Guardar contraseña",
     "passwordUpdated": "Contraseña actualizada",
-    "linkInvalid": "Este enlace no es válido o ha caducado. Inténtalo de nuevo."
+    "linkInvalid": "Este enlace no es válido o ha caducado. Inténtalo de nuevo.",
+    "tabLogin": "Iniciar sesión",
+    "tabSignup": "Registrarse",
+    "tagline": "Gestiona tus facturas con total sencillez."
   },
   "states": {
     "errorTitle": "Se ha producido un error",

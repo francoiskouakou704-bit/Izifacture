@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Àkáǹtì mi",
-      "description": "Ìṣàkóso ọ̀rọ̀ aṣínà yóò dé pẹ̀lú ìwọlé.",
+      "description": "Orúkọ rẹ máa ń hàn nínú ìṣàfilọ́lẹ̀ àti nínú ìtàn àwọn ìwé-owó rẹ.",
       "fullName": "Orúkọ kíkún",
       "email": "Ímeèlì",
       "preferences": "Ìfẹ́",
       "preferencesDescription": "Èdè ojú-ìwé àti ti àwọn ìwé owó tí o ń wò.",
-      "language": "Èdè"
+      "language": "Èdè",
+      "nameUpdated": "A ti ṣe àtúnṣe orúkọ"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Ọ̀rọ̀ aṣínà tuntun",
     "updatePassword": "Fi ọ̀rọ̀ aṣínà pamọ́",
     "passwordUpdated": "A ti ṣe àtúnṣe ọ̀rọ̀ aṣínà",
-    "linkInvalid": "Ìjápọ̀ yìí kò wúlò tàbí ó ti parí. Gbìyànjú lẹ́ẹ̀kan sí i."
+    "linkInvalid": "Ìjápọ̀ yìí kò wúlò tàbí ó ti parí. Gbìyànjú lẹ́ẹ̀kan sí i.",
+    "tabLogin": "Wọlé",
+    "tabSignup": "Forúkọsílẹ̀",
+    "tagline": "Ṣàkóso àwọn ìwé-owó rẹ ní ìrọ̀rùn."
   },
   "states": {
     "errorTitle": "Àṣìṣe kan ṣẹlẹ̀",

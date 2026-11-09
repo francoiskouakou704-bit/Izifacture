@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Mijn account",
-      "description": "Wachtwoordbeheer komt met de authenticatie.",
+      "description": "Je naam verschijnt in de app en in de geschiedenis van je facturen.",
       "fullName": "Volledige naam",
       "email": "E-mail",
       "preferences": "Voorkeuren",
       "preferencesDescription": "Taal van de interface en van de facturen die je bekijkt.",
-      "language": "Taal"
+      "language": "Taal",
+      "nameUpdated": "Naam bijgewerkt"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Nieuw wachtwoord",
     "updatePassword": "Wachtwoord opslaan",
     "passwordUpdated": "Wachtwoord bijgewerkt",
-    "linkInvalid": "Deze link is ongeldig of verlopen. Probeer het opnieuw."
+    "linkInvalid": "Deze link is ongeldig of verlopen. Probeer het opnieuw.",
+    "tabLogin": "Inloggen",
+    "tabSignup": "Registreren",
+    "tagline": "Beheer je facturen heel eenvoudig."
   },
   "states": {
     "errorTitle": "Er is iets misgegaan",

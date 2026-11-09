@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Il mio account",
-      "description": "La gestione della password arriverà con l’autenticazione.",
+      "description": "Il tuo nome compare nell’app e nello storico delle tue fatture.",
       "fullName": "Nome completo",
       "email": "E-mail",
       "preferences": "Preferenze",
       "preferencesDescription": "Lingua dell’interfaccia e delle fatture che consulti.",
-      "language": "Lingua"
+      "language": "Lingua",
+      "nameUpdated": "Nome aggiornato"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Nuova password",
     "updatePassword": "Salva password",
     "passwordUpdated": "Password aggiornata",
-    "linkInvalid": "Questo link non è valido o è scaduto. Riprova."
+    "linkInvalid": "Questo link non è valido o è scaduto. Riprova.",
+    "tabLogin": "Accedi",
+    "tabSignup": "Registrati",
+    "tagline": "Gestisci le tue fatture in tutta semplicità."
   },
   "states": {
     "errorTitle": "Si è verificato un errore",

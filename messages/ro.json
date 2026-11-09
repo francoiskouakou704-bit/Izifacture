@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Contul meu",
-      "description": "Gestionarea parolei va veni odată cu autentificarea.",
+      "description": "Numele tău apare în aplicație și în istoricul facturilor tale.",
       "fullName": "Nume complet",
       "email": "E-mail",
       "preferences": "Preferințe",
       "preferencesDescription": "Limba interfeței și a facturilor pe care le consulți.",
-      "language": "Limbă"
+      "language": "Limbă",
+      "nameUpdated": "Nume actualizat"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Parolă nouă",
     "updatePassword": "Salvează parola",
     "passwordUpdated": "Parolă actualizată",
-    "linkInvalid": "Acest link este invalid sau a expirat. Încearcă din nou."
+    "linkInvalid": "Acest link este invalid sau a expirat. Încearcă din nou.",
+    "tabLogin": "Autentificare",
+    "tabSignup": "Înregistrare",
+    "tagline": "Gestionează-ți facturile cu ușurință."
   },
   "states": {
     "errorTitle": "A apărut o eroare",

@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "マイアカウント",
-      "description": "パスワード管理は認証機能とともに提供されます。",
+      "description": "お名前はアプリ内と請求書の履歴に表示されます。",
       "fullName": "氏名",
       "email": "メール",
       "preferences": "表示設定",
       "preferencesDescription": "画面および閲覧する請求書の言語。",
-      "language": "言語"
+      "language": "言語",
+      "nameUpdated": "名前を更新しました"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "新しいパスワード",
     "updatePassword": "パスワードを保存",
     "passwordUpdated": "パスワードを更新しました",
-    "linkInvalid": "このリンクは無効か期限切れです。もう一度お試しください。"
+    "linkInvalid": "このリンクは無効か期限切れです。もう一度お試しください。",
+    "tabLogin": "ログイン",
+    "tabSignup": "新規登録",
+    "tagline": "請求書をかんたんに管理。"
   },
   "states": {
     "errorTitle": "エラーが発生しました",

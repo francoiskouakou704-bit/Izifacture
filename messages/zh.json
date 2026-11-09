@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "我的账户",
-      "description": "密码管理将随身份验证功能一同推出。",
+      "description": "您的姓名会显示在应用中以及发票历史记录里。",
       "fullName": "姓名",
       "email": "邮箱",
       "preferences": "偏好",
       "preferencesDescription": "界面及您查看的发票所使用的语言。",
-      "language": "语言"
+      "language": "语言",
+      "nameUpdated": "姓名已更新"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "新密码",
     "updatePassword": "保存密码",
     "passwordUpdated": "密码已更新",
-    "linkInvalid": "此链接无效或已过期，请重试。"
+    "linkInvalid": "此链接无效或已过期，请重试。",
+    "tabLogin": "登录",
+    "tabSignup": "注册",
+    "tagline": "轻松管理您的发票。"
   },
   "states": {
     "errorTitle": "出现错误",

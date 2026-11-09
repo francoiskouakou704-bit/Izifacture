@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "I-akhawunti yami",
-      "description": "Ukuphathwa kwephasiwedi kuzofika nokuqinisekisa.",
+      "description": "Igama lakho livela ku-app nasemlandweni wama-invoyisi akho.",
       "fullName": "Igama eligcwele",
       "email": "I-imeyili",
       "preferences": "Izintandokazi",
       "preferencesDescription": "Ulimi lwesixhumi esibonakalayo nolwama-invoyisi owabukayo.",
-      "language": "Ulimi"
+      "language": "Ulimi",
+      "nameUpdated": "Igama libuyekeziwe"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Iphasiwedi entsha",
     "updatePassword": "Londoloza iphasiwedi",
     "passwordUpdated": "Iphasiwedi ibuyekeziwe",
-    "linkInvalid": "Lesi sixhumanisi asivumelekile noma siphelelwe yisikhathi. Zama futhi."
+    "linkInvalid": "Lesi sixhumanisi asivumelekile noma siphelelwe yisikhathi. Zama futhi.",
+    "tabLogin": "Ngena",
+    "tabSignup": "Bhalisa",
+    "tagline": "Phatha ama-invoyisi akho kalula."
   },
   "states": {
     "errorTitle": "Kwenzeke iphutha",

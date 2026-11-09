@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Akaun saya",
-      "description": "Pengurusan kata laluan akan tersedia bersama pengesahan.",
+      "description": "Nama anda dipaparkan dalam aplikasi dan dalam sejarah invois anda.",
       "fullName": "Nama penuh",
       "email": "E-mel",
       "preferences": "Keutamaan",
       "preferencesDescription": "Bahasa antara muka dan invois yang anda lihat.",
-      "language": "Bahasa"
+      "language": "Bahasa",
+      "nameUpdated": "Nama dikemas kini"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Kata laluan baharu",
     "updatePassword": "Simpan kata laluan",
     "passwordUpdated": "Kata laluan dikemas kini",
-    "linkInvalid": "Pautan ini tidak sah atau telah tamat tempoh. Cuba lagi."
+    "linkInvalid": "Pautan ini tidak sah atau telah tamat tempoh. Cuba lagi.",
+    "tabLogin": "Log masuk",
+    "tabSignup": "Daftar",
+    "tagline": "Urus invois anda dengan mudah."
   },
   "states": {
     "errorTitle": "Ralat berlaku",

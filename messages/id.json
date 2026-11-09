@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Akun saya",
-      "description": "Pengelolaan kata sandi akan hadir bersama autentikasi.",
+      "description": "Nama Anda muncul di aplikasi dan di riwayat faktur Anda.",
       "fullName": "Nama lengkap",
       "email": "Email",
       "preferences": "Preferensi",
       "preferencesDescription": "Bahasa antarmuka dan faktur yang Anda lihat.",
-      "language": "Bahasa"
+      "language": "Bahasa",
+      "nameUpdated": "Nama diperbarui"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Kata sandi baru",
     "updatePassword": "Simpan kata sandi",
     "passwordUpdated": "Kata sandi diperbarui",
-    "linkInvalid": "Tautan ini tidak valid atau sudah kedaluwarsa. Coba lagi."
+    "linkInvalid": "Tautan ini tidak valid atau sudah kedaluwarsa. Coba lagi.",
+    "tabLogin": "Masuk",
+    "tabSignup": "Daftar",
+    "tagline": "Kelola faktur Anda dengan mudah."
   },
   "states": {
     "errorTitle": "Terjadi kesalahan",

@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "A minha conta",
-      "description": "A gestão da palavra-passe chega com a autenticação.",
+      "description": "O seu nome aparece na aplicação e no histórico das suas faturas.",
       "fullName": "Nome completo",
       "email": "Email",
       "preferences": "Preferências",
       "preferencesDescription": "Idioma da interface e das faturas que consulta.",
-      "language": "Idioma"
+      "language": "Idioma",
+      "nameUpdated": "Nome atualizado"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Nova senha",
     "updatePassword": "Guardar senha",
     "passwordUpdated": "Senha atualizada",
-    "linkInvalid": "Este link é inválido ou expirou. Tente novamente."
+    "linkInvalid": "Este link é inválido ou expirou. Tente novamente.",
+    "tabLogin": "Entrar",
+    "tabSignup": "Cadastrar",
+    "tagline": "Gerencie suas faturas com toda a simplicidade."
   },
   "states": {
     "errorTitle": "Ocorreu um erro",

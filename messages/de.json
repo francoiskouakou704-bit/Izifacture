@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Mein Konto",
-      "description": "Die Passwortverwaltung folgt mit der Authentifizierung.",
+      "description": "Ihr Name erscheint in der App und im Verlauf Ihrer Rechnungen.",
       "fullName": "Vollständiger Name",
       "email": "E-Mail",
       "preferences": "Präferenzen",
       "preferencesDescription": "Sprache der Oberfläche und der angezeigten Rechnungen.",
-      "language": "Sprache"
+      "language": "Sprache",
+      "nameUpdated": "Name aktualisiert"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Neues Passwort",
     "updatePassword": "Passwort speichern",
     "passwordUpdated": "Passwort aktualisiert",
-    "linkInvalid": "Dieser Link ist ungültig oder abgelaufen. Bitte versuche es erneut."
+    "linkInvalid": "Dieser Link ist ungültig oder abgelaufen. Bitte versuche es erneut.",
+    "tabLogin": "Anmelden",
+    "tabSignup": "Registrieren",
+    "tagline": "Verwalten Sie Ihre Rechnungen ganz einfach."
   },
   "states": {
     "errorTitle": "Ein Fehler ist aufgetreten",

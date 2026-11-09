@@ -1,6 +1,5 @@
 'use client'
 
-import { ArrowRight, Lock, Mail } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -34,7 +33,6 @@ export function LoginForm({ next, linkError }: { next?: string; linkError?: bool
         type="email"
         autoComplete="email"
         placeholder={t('emailPlaceholder')}
-        leftIcon={<Mail className="h-4 w-4" />}
         {...field('email')}
       />
       <div>
@@ -51,13 +49,11 @@ export function LoginForm({ next, linkError }: { next?: string; linkError?: bool
           type="password"
           autoComplete="current-password"
           placeholder="••••••••"
-          leftIcon={<Lock className="h-4 w-4" />}
           {...field('password')}
         />
       </div>
-      <Button type="submit" className="w-full" size="lg" loading={pending}>
+      <Button type="submit" className="w-full bg-gray-900 text-white hover:bg-gray-800 active:bg-gray-950 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100" size="lg" loading={pending}>
         {t('login')}
-        <ArrowRight className="h-4 w-4" />
       </Button>
     </form>
   )

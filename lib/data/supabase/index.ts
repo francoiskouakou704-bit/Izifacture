@@ -226,6 +226,16 @@ export const supabaseDataSource: DataSource = {
     }
   },
 
+  async updateProfile({ fullName }) {
+    const { data } = await (await db()).auth.getClaims()
+    const id = data?.claims?.sub
+    if (!id) throw new DomainError('errors.unexpected')
+    // RLS : un utilisateur ne peut modifier que son propre profil.
+    // .single() : une mise à jour qui ne touche aucune ligne échoue au lieu de passer sous silence.
+    must(await (await db()).from('profiles').update({ full_name: fullName }).eq('id', id).select('id').single())
+    return (await supabaseDataSource.getCurrentUser())!
+  },
+
   // ── Organisation ──────────────────────────────────────────────
   async getOrganization() {
     const row = await getOrgRow()

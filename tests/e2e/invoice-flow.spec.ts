@@ -139,6 +139,23 @@ test('les paramètres de l’entreprise sont enregistrés et validés', async ({
   await expect(page.getByText('Lettres, chiffres et tirets uniquement')).toBeVisible()
 })
 
+test('le nom de l’utilisateur est modifiable et repris dans l’app', async ({ page }) => {
+  await open(page, '/settings')
+  await page.getByRole('tab', { name: 'Compte' }).click()
+  const fullName = page.getByLabel('Nom complet')
+  await fullName.fill('A')
+  await page.getByRole('button', { name: 'Enregistrer' }).click()
+  await expect(page.getByText('2 caractères minimum')).toBeVisible()
+
+  await fullName.fill('Fatou Ndiaye')
+  await page.getByRole('button', { name: 'Enregistrer' }).click()
+  await expect(page.getByText('Nom mis à jour')).toBeVisible()
+  await expect(page.locator('aside').getByText('Fatou Ndiaye')).toBeVisible()
+
+  await open(page, '/dashboard')
+  await expect(page.getByText(/Bonjour, Fatou/)).toBeVisible()
+})
+
 test('dashboard, clients et page publique s’affichent', async ({ page }) => {
   await open(page, '/dashboard')
   await expect(page.getByText('Montant facturé')).toBeVisible()

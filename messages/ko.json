@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "내 계정",
-      "description": "비밀번호 관리는 인증 기능과 함께 제공됩니다.",
+      "description": "이름은 앱 전체와 청구서 기록에 표시됩니다.",
       "fullName": "이름",
       "email": "이메일",
       "preferences": "환경설정",
       "preferencesDescription": "화면과 열람하는 인보이스의 언어입니다.",
-      "language": "언어"
+      "language": "언어",
+      "nameUpdated": "이름이 업데이트되었습니다"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "새 비밀번호",
     "updatePassword": "비밀번호 저장",
     "passwordUpdated": "비밀번호가 변경되었습니다",
-    "linkInvalid": "링크가 유효하지 않거나 만료되었습니다. 다시 시도하세요."
+    "linkInvalid": "링크가 유효하지 않거나 만료되었습니다. 다시 시도하세요.",
+    "tabLogin": "로그인",
+    "tabSignup": "회원가입",
+    "tagline": "청구서를 간편하게 관리하세요."
   },
   "states": {
     "errorTitle": "오류가 발생했습니다",

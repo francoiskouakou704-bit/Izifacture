@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Tài khoản của tôi",
-      "description": "Quản lý mật khẩu sẽ có cùng tính năng xác thực.",
+      "description": "Tên của bạn hiển thị trong ứng dụng và trong lịch sử hóa đơn của bạn.",
       "fullName": "Họ và tên",
       "email": "Email",
       "preferences": "Tùy chọn",
       "preferencesDescription": "Ngôn ngữ giao diện và hóa đơn bạn xem.",
-      "language": "Ngôn ngữ"
+      "language": "Ngôn ngữ",
+      "nameUpdated": "Đã cập nhật tên"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Mật khẩu mới",
     "updatePassword": "Lưu mật khẩu",
     "passwordUpdated": "Đã cập nhật mật khẩu",
-    "linkInvalid": "Liên kết này không hợp lệ hoặc đã hết hạn. Vui lòng thử lại."
+    "linkInvalid": "Liên kết này không hợp lệ hoặc đã hết hạn. Vui lòng thử lại.",
+    "tabLogin": "Đăng nhập",
+    "tabSignup": "Đăng ký",
+    "tagline": "Quản lý hóa đơn thật đơn giản."
   },
   "states": {
     "errorTitle": "Đã xảy ra lỗi",

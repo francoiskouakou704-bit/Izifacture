@@ -9,7 +9,16 @@ import {
   invoicingDefaultsSchema,
   onboardingSchema,
 } from '@/lib/validations/organization'
+import { profileSchema } from '@/lib/validations/auth'
 import { runAction } from './utils'
+
+export async function updateProfileAction(rawInput: unknown) {
+  return runAction(async () => {
+    const { fullName } = profileSchema.parse(rawInput)
+    await getDataSource().updateProfile({ fullName })
+    revalidatePath('/', 'layout')
+  })
+}
 
 export async function updateCompanyAction(rawInput: unknown) {
   return runAction(async () => {

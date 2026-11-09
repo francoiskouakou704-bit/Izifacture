@@ -66,6 +66,11 @@ export const mockDataSource: DataSource = {
     return clone(db().user)
   },
 
+  async updateProfile({ fullName }) {
+    db().user.fullName = fullName
+    return clone(db().user)
+  },
+
   // ── Organisation ──────────────────────────────────────────────
   async getOrganization() {
     const org = db().organization

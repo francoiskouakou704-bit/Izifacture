@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Akaụntụ m",
-      "description": "Njikwa okwuntughe ga-abịa na nbanye.",
+      "description": "Aha gị na-apụta n’ime ngwa ahụ na n’akụkọ akwụkwọ ụgwọ gị.",
       "fullName": "Aha zuru ezu",
       "email": "Email",
       "preferences": "Mmasị",
       "preferencesDescription": "Asụsụ ihu ngwa na nke akwụkwọ ụgwọ ị na-ele.",
-      "language": "Asụsụ"
+      "language": "Asụsụ",
+      "nameUpdated": "Emelitere aha"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Paswọọdụ ọhụrụ",
     "updatePassword": "Chekwaa paswọọdụ",
     "passwordUpdated": "Emelitere paswọọdụ",
-    "linkInvalid": "Njikọ a adịghị mma ma ọ bụ agwụla. Nwaa ọzọ."
+    "linkInvalid": "Njikọ a adịghị mma ma ọ bụ agwụla. Nwaa ọzọ.",
+    "tabLogin": "Banye",
+    "tabSignup": "Debanye aha",
+    "tagline": "Jikwaa akwụkwọ ụgwọ gị n’ụzọ dị mfe."
   },
   "states": {
     "errorTitle": "Njehie mere",

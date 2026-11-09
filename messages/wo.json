@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Sama kont",
-      "description": "Saytu baatu jàll dina ñëw ak dugg bi.",
+      "description": "Sa tur dafay feeñ ci app bi ak ci jaar-jaaru sa faktiir yi.",
       "fullName": "Tur bu mat",
       "email": "Email",
       "preferences": "Tànneef",
       "preferencesDescription": "Làkku app bi ak bu faktiir yi ngay xool.",
-      "language": "Làkk"
+      "language": "Làkk",
+      "nameUpdated": "Tur bi yeesal nañu ko"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Baatu jàll bu bees",
     "updatePassword": "Denc baatu jàll bi",
     "passwordUpdated": "Baatu jàll bi soppi nañu ko",
-    "linkInvalid": "Lëkkalekaay bii baaxul walla jeex na. Jéemaatal."
+    "linkInvalid": "Lëkkalekaay bii baaxul walla jeex na. Jéemaatal.",
+    "tabLogin": "Duggu",
+    "tabSignup": "Bindu",
+    "tagline": "Saytul sa faktiir yi ci lu yomb."
   },
   "states": {
     "errorTitle": "Njuumte am na",

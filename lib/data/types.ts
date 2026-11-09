@@ -79,6 +79,8 @@ export interface PaymentRecord {
 export interface DataSource {
   // Session
   getCurrentUser(): Promise<CurrentUser | null>
+  /** Nom affiché de l'utilisateur connecté (barre latérale, accueil, historique des factures). */
+  updateProfile(patch: { fullName: string }): Promise<CurrentUser>
 
   // Organisation
   getOrganization(): Promise<Organization | null>

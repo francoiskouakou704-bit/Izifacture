@@ -463,12 +463,13 @@
     },
     "account": {
       "title": "Akoonkayga",
-      "description": "Maaraynta furaha sirta ah waxay la imaan doontaa xaqiijinta.",
+      "description": "Magacaagu wuxuu ka muuqdaa barnaamijka iyo taariikhda biilashaada.",
       "fullName": "Magaca oo buuxa",
       "email": "Iimayl",
       "preferences": "Doorbidyo",
       "preferencesDescription": "Luqadda interface-ka iyo biilasha aad aragto.",
-      "language": "Luqadda"
+      "language": "Luqadda",
+      "nameUpdated": "Magaca waa la cusboonaysiiyay"
     }
   },
   "onboarding": {
@@ -524,7 +525,10 @@
     "newPassword": "Eray sir ah oo cusub",
     "updatePassword": "Kaydi erayga sirta",
     "passwordUpdated": "Erayga sirta waa la cusbooneysiiyey",
-    "linkInvalid": "Xiriiriyahan sax ma aha ama wuu dhacay. Mar kale isku day."
+    "linkInvalid": "Xiriiriyahan sax ma aha ama wuu dhacay. Mar kale isku day.",
+    "tabLogin": "Gal",
+    "tabSignup": "Is diiwaangeli",
+    "tagline": "Si fudud u maamul qaansheegyadaada."
   },
   "states": {
     "errorTitle": "Khalad ayaa dhacay",
