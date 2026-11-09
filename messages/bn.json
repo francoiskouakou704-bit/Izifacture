@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "লোগো",
-      "description": "PNG, JPG, WEBP বা SVG · সর্বোচ্চ ২ MB",
+      "description": "PNG, JPG বা WEBP · সর্বোচ্চ ২ MB",
       "choose": "লোগো নির্বাচন করুন",
       "current": "বর্তমান লোগো",
       "upload": "আপলোড",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "আংশিক পরিশোধিত ইনভয়েস বাতিল করা যায় না",
     "notAwaitingPayment": "এই ইনভয়েস কোনো পেমেন্টের অপেক্ষায় নেই",
     "paymentExceedsBalance": "পরিমাণ বাকির চেয়ে বেশি",
-    "logoFormat": "গ্রহণযোগ্য ফরম্যাট: PNG, JPG, WEBP বা SVG",
+    "logoFormat": "গ্রহণযোগ্য ফরম্যাট: PNG, JPG বা WEBP",
     "logoTooLarge": "লোগো ২ MB-এর বেশি হতে পারবে না",
     "pdfFailed": "PDF তৈরি করা যায়নি। আবার চেষ্টা করুন বা “প্রিন্ট করুন” ব্যবহার করুন।"
   },

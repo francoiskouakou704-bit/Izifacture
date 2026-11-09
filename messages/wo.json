@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Logo",
-      "description": "PNG, JPG, WEBP walla SVG · 2 Mo bu ëpp",
+      "description": "PNG, JPG walla WEBP · 2 Mo bu ëpp",
       "choose": "Tànnal logo",
       "current": "Logo bi nekk",
       "upload": "Yeb",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Mënuñu neenal faktiir bu ñu fey xaaj",
     "notAwaitingPayment": "Faktiir bii xaarul fey",
     "paymentExceedsBalance": "Xaalis bi ëpp na li des",
-    "logoFormat": "Format yi ñu nangu: PNG, JPG, WEBP walla SVG",
+    "logoFormat": "Format yi ñu nangu: PNG, JPG walla WEBP",
     "logoTooLarge": "Logo bi warul ëpp 2 Mo",
     "pdfFailed": "Mënunu nu def PDF bi. Jéemaatal walla jëfandikool “Imprime”."
   },

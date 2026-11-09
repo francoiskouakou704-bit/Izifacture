@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "로고",
-      "description": "PNG, JPG, WEBP 또는 SVG · 최대 2MB",
+      "description": "PNG, JPG 또는 WEBP · 최대 2MB",
       "choose": "로고 선택",
       "current": "현재 로고",
       "upload": "업로드",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "부분 결제된 인보이스는 취소할 수 없습니다",
     "notAwaitingPayment": "결제를 기다리는 인보이스가 아닙니다",
     "paymentExceedsBalance": "금액이 남은 금액을 초과합니다",
-    "logoFormat": "지원 형식: PNG, JPG, WEBP 또는 SVG",
+    "logoFormat": "지원 형식: PNG, JPG 또는 WEBP",
     "logoTooLarge": "로고는 2MB를 넘을 수 없습니다",
     "pdfFailed": "PDF를 만들지 못했습니다. 다시 시도하거나 “인쇄”를 사용하세요."
   },

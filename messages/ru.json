@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Логотип",
-      "description": "PNG, JPG, WEBP или SVG · до 2 МБ",
+      "description": "PNG, JPG или WEBP · до 2 МБ",
       "choose": "Выбрать логотип",
       "current": "Текущий логотип",
       "upload": "Загрузить",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Нельзя аннулировать частично оплаченный счёт",
     "notAwaitingPayment": "Этот счёт не ожидает оплаты",
     "paymentExceedsBalance": "Сумма превышает остаток к оплате",
-    "logoFormat": "Допустимые форматы: PNG, JPG, WEBP или SVG",
+    "logoFormat": "Допустимые форматы: PNG, JPG или WEBP",
     "logoTooLarge": "Логотип не должен превышать 2 МБ",
     "pdfFailed": "Не удалось создать PDF. Повторите попытку или используйте «Печать»."
   },

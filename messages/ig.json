@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Akara",
-      "description": "PNG, JPG, WEBP ma ọ bụ SVG · kachasị MB 2",
+      "description": "PNG, JPG ma ọ bụ WEBP · kachasị MB 2",
       "choose": "Họrọ akara",
       "current": "Akara ugbu a",
       "upload": "Bulite",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Enweghị ike ịkagbu akwụkwọ ụgwọ a kwụrụ akụkụ ya",
     "notAwaitingPayment": "Akwụkwọ ụgwọ a anaghị eche ịkwụ ụgwọ",
     "paymentExceedsBalance": "Ego ahụ karịrị ihe fọdụrụ",
-    "logoFormat": "Ụdị a nabatara: PNG, JPG, WEBP ma ọ bụ SVG",
+    "logoFormat": "Ụdị a nabatara: PNG, JPG ma ọ bụ WEBP",
     "logoTooLarge": "Akara agaghị akarị MB 2",
     "pdfFailed": "Enweghị ike ịmepụta PDF. Nwaa ọzọ ma ọ bụ jiri “Bipụta”."
   },

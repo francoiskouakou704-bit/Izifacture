@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Logo",
-      "description": "PNG, JPG, WEBP ou SVG · 2 Mo max",
+      "description": "PNG, JPG ou WEBP · 2 Mo max",
       "choose": "Choisir un logo",
       "current": "Logo actuel",
       "upload": "Téléverser",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Impossible d’annuler une facture partiellement payée",
     "notAwaitingPayment": "Cette facture n’attend pas de paiement",
     "paymentExceedsBalance": "Le montant dépasse le reste à payer",
-    "logoFormat": "Format accepté : PNG, JPG, WEBP ou SVG",
+    "logoFormat": "Format accepté : PNG, JPG ou WEBP",
     "logoTooLarge": "Le logo ne doit pas dépasser 2 Mo",
     "pdfFailed": "Le PDF n’a pas pu être généré. Réessayez ou utilisez « Imprimer »."
   },

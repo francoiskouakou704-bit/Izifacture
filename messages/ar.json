@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "الشعار",
-      "description": "PNG أو JPG أو WEBP أو SVG · 2 ميغابايت كحد أقصى",
+      "description": "PNG أو JPG أو WEBP · 2 ميغابايت كحد أقصى",
       "choose": "اختر شعارًا",
       "current": "الشعار الحالي",
       "upload": "رفع",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "لا يمكن إلغاء فاتورة مدفوعة جزئيًا",
     "notAwaitingPayment": "هذه الفاتورة لا تنتظر أي دفعة",
     "paymentExceedsBalance": "المبلغ يتجاوز المتبقي",
-    "logoFormat": "الصيغ المقبولة: PNG أو JPG أو WEBP أو SVG",
+    "logoFormat": "الصيغ المقبولة: PNG أو JPG أو WEBP",
     "logoTooLarge": "يجب ألا يتجاوز الشعار 2 ميغابايت",
     "pdfFailed": "تعذّر إنشاء ملف PDF. حاول مرة أخرى أو استخدم «طباعة»."
   },

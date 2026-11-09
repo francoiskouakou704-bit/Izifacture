@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "لوگو",
-      "description": "PNG، JPG، WEBP یا SVG · حداکثر ۲ مگابایت",
+      "description": "PNG، JPG یا WEBP · حداکثر ۲ مگابایت",
       "choose": "انتخاب لوگو",
       "current": "لوگوی فعلی",
       "upload": "بارگذاری",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "فاکتوری که بخشی از آن پرداخت شده قابل لغو نیست",
     "notAwaitingPayment": "این فاکتور در انتظار پرداخت نیست",
     "paymentExceedsBalance": "مبلغ از مانده بیشتر است",
-    "logoFormat": "قالب‌های مجاز: PNG، JPG، WEBP یا SVG",
+    "logoFormat": "قالب‌های مجاز: PNG، JPG یا WEBP",
     "logoTooLarge": "لوگو نباید بیشتر از ۲ مگابایت باشد",
     "pdfFailed": "ساخت PDF ممکن نشد. دوباره تلاش کنید یا از «چاپ» استفاده کنید."
   },

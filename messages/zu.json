@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Ilogo",
-      "description": "PNG, JPG, WEBP noma SVG · ubuningi obungu-2 MB",
+      "description": "PNG, JPG noma WEBP · ubuningi obungu-2 MB",
       "choose": "Khetha ilogo",
       "current": "Ilogo yamanje",
       "upload": "Layisha",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "I-invoyisi ekhokhwe ngokwengxenye ayikwazi ukukhanselwa",
     "notAwaitingPayment": "Le invoyisi ayilindile inkokhelo",
     "paymentExceedsBalance": "Inani lidlula okusele",
-    "logoFormat": "Amafomethi amukelekayo: PNG, JPG, WEBP noma SVG",
+    "logoFormat": "Amafomethi amukelekayo: PNG, JPG noma WEBP",
     "logoTooLarge": "Ilogo akufanele idlule ku-2 MB",
     "pdfFailed": "I-PDF ayikwazanga ukwakhiwa. Zama futhi noma usebenzise “Phrinta”."
   },

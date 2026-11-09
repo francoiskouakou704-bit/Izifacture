@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Ikirango",
-      "description": "PNG, JPG, WEBP cyangwa SVG · ntarengwa 2 MB",
+      "description": "PNG, JPG cyangwa WEBP · ntarengwa 2 MB",
       "choose": "Hitamo ikirango",
       "current": "Ikirango kiriho",
       "upload": "Ohereza",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Inyemezabuguzi yishyuwe igice ntishobora guhagarikwa",
     "notAwaitingPayment": "Iyi nyemezabuguzi ntitegereje kwishyurwa",
     "paymentExceedsBalance": "Amafaranga arenze asigaye",
-    "logoFormat": "Imiterere yemewe: PNG, JPG, WEBP cyangwa SVG",
+    "logoFormat": "Imiterere yemewe: PNG, JPG cyangwa WEBP",
     "logoTooLarge": "Ikirango ntikigomba kurenza 2 MB",
     "pdfFailed": "PDF ntiyashoboye gukorwa. Ongera ugerageze cyangwa ukoreshe “Capa”."
   },

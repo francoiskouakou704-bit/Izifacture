@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Ilogo",
-      "description": "PNG, JPG, WEBP okanye SVG · ubuninzi yi-2 MB",
+      "description": "PNG, JPG okanye WEBP · ubuninzi yi-2 MB",
       "choose": "Khetha ilogo",
       "current": "Ilogo yangoku",
       "upload": "Layisha",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "I-invoyisi ehlawulwe ngokuyinxalenye ayinakurhoxiswa",
     "notAwaitingPayment": "Le invoyisi ayilindanga ntlawulo",
     "paymentExceedsBalance": "Isixa sidlula okuseleyo",
-    "logoFormat": "Iifomathi ezamkelekileyo: PNG, JPG, WEBP okanye SVG",
+    "logoFormat": "Iifomathi ezamkelekileyo: PNG, JPG okanye WEBP",
     "logoTooLarge": "Ilogo mayingagqithi ku-2 MB",
     "pdfFailed": "I-PDF ayikwazanga ukwenziwa. Zama kwakhona okanye usebenzise “Printa”."
   },

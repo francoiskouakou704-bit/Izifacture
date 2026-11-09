@@ -1,7 +1,7 @@
 {
   "name": "izifacture-desktop",
   "productName": "iziFacture",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "iziFacture — la facturation pour les entrepreneurs africains, sur votre ordinateur.",
   "homepage": "https://izifacture-weld-rho.vercel.app",
   "author": {
@@ -39,7 +39,9 @@
       "target": [
         {
           "target": "nsis",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
       ],
       "artifactName": "iziFacture-Windows.${ext}"
@@ -51,14 +53,18 @@
       "uninstallDisplayName": "iziFacture",
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "installerLanguages": ["fr_FR"],
+      "installerLanguages": [
+        "fr_FR"
+      ],
       "language": "1036"
     },
     "mac": {
       "target": [
         {
           "target": "dmg",
-          "arch": ["universal"]
+          "arch": [
+            "universal"
+          ]
         }
       ],
       "category": "public.app-category.business",
@@ -74,11 +80,15 @@
       "target": [
         {
           "target": "AppImage",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         },
         {
           "target": "deb",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
       ],
       "category": "Office",

@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "لوگو",
-      "description": "PNG، JPG، WEBP یا SVG · زیادہ سے زیادہ 2 MB",
+      "description": "PNG، JPG یا WEBP · زیادہ سے زیادہ 2 MB",
       "choose": "لوگو منتخب کریں",
       "current": "موجودہ لوگو",
       "upload": "اپ لوڈ",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "جزوی ادا شدہ انوائس منسوخ نہیں ہو سکتی",
     "notAwaitingPayment": "یہ انوائس ادائیگی کی منتظر نہیں",
     "paymentExceedsBalance": "رقم باقی رقم سے زیادہ ہے",
-    "logoFormat": "قابل قبول فارمیٹس: PNG، JPG، WEBP یا SVG",
+    "logoFormat": "قابل قبول فارمیٹس: PNG، JPG یا WEBP",
     "logoTooLarge": "لوگو 2 MB سے زیادہ نہیں ہونا چاہیے",
     "pdfFailed": "PDF نہیں بن سکی۔ دوبارہ کوشش کریں یا «پرنٹ کریں» استعمال کریں۔"
   },

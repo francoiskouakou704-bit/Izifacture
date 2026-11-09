@@ -6,6 +6,7 @@ import {
   LOGO_MAX_BYTES,
   LOGO_MIME_TYPES,
   companyInputSchema,
+  hasImageSignature,
   invoicingDefaultsSchema,
   onboardingSchema,
 } from '@/lib/validations/organization'
@@ -61,6 +62,8 @@ export async function updateLogoAction(dataUrl: string | null) {
       if (!match || !LOGO_MIME_TYPES.includes(match[1])) throw new DomainError('errors.logoFormat')
       const bytes = new Uint8Array(Buffer.from(match[2], 'base64'))
       if (bytes.byteLength > LOGO_MAX_BYTES) throw new DomainError('errors.logoTooLarge')
+      // Le type vient du navigateur : on vérifie que le contenu est bien une image de ce type
+      if (!hasImageSignature(bytes, match[1])) throw new DomainError('errors.logoFormat')
       file = { mimeType: match[1], bytes }
     }
     await getDataSource().setLogo(file)

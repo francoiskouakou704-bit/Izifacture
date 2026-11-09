@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Λογότυπο",
-      "description": "PNG, JPG, WEBP ή SVG · έως 2 MB",
+      "description": "PNG, JPG ή WEBP · έως 2 MB",
       "choose": "Επιλογή λογότυπου",
       "current": "Τρέχον λογότυπο",
       "upload": "Μεταφόρτωση",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Δεν μπορεί να ακυρωθεί τιμολόγιο με μερική πληρωμή",
     "notAwaitingPayment": "Αυτό το τιμολόγιο δεν αναμένει πληρωμή",
     "paymentExceedsBalance": "Το ποσό υπερβαίνει το υπόλοιπο",
-    "logoFormat": "Αποδεκτές μορφές: PNG, JPG, WEBP ή SVG",
+    "logoFormat": "Αποδεκτές μορφές: PNG, JPG ή WEBP",
     "logoTooLarge": "Το λογότυπο δεν πρέπει να υπερβαίνει τα 2 MB",
     "pdfFailed": "Δεν ήταν δυνατή η δημιουργία του PDF. Δοκιμάστε ξανά ή χρησιμοποιήστε «Εκτύπωση»."
   },

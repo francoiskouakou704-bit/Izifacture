@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "लोगो",
-      "description": "PNG, JPG, WEBP या SVG · अधिकतम 2 MB",
+      "description": "PNG, JPG या WEBP · अधिकतम 2 MB",
       "choose": "लोगो चुनें",
       "current": "वर्तमान लोगो",
       "upload": "अपलोड करें",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "आंशिक रूप से भुगतान किया गया इनवॉइस रद्द नहीं हो सकता",
     "notAwaitingPayment": "यह इनवॉइस भुगतान की प्रतीक्षा में नहीं है",
     "paymentExceedsBalance": "राशि शेष देय से अधिक है",
-    "logoFormat": "स्वीकृत फ़ॉर्मेट: PNG, JPG, WEBP या SVG",
+    "logoFormat": "स्वीकृत फ़ॉर्मेट: PNG, JPG या WEBP",
     "logoTooLarge": "लोगो 2 MB से अधिक नहीं होना चाहिए",
     "pdfFailed": "PDF नहीं बन सका। फिर से कोशिश करें या “प्रिंट करें” का उपयोग करें।"
   },

@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "ロゴ",
-      "description": "PNG、JPG、WEBP、SVG · 最大 2 MB",
+      "description": "PNG、JPG、WEBP · 最大 2 MB",
       "choose": "ロゴを選択",
       "current": "現在のロゴ",
       "upload": "アップロード",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "一部入金済みの請求書は取り消せません",
     "notAwaitingPayment": "この請求書は入金待ちではありません",
     "paymentExceedsBalance": "金額が未払い残高を超えています",
-    "logoFormat": "対応形式：PNG、JPG、WEBP、SVG",
+    "logoFormat": "対応形式：PNG、JPG、WEBP",
     "logoTooLarge": "ロゴは 2 MB 以下にしてください",
     "pdfFailed": "PDF を作成できませんでした。もう一度試すか「印刷」をご利用ください。"
   },

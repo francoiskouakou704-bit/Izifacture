@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Logo",
-      "description": "PNG, JPG, WEBP sau SVG · max. 2 MB",
+      "description": "PNG, JPG sau WEBP · max. 2 MB",
       "choose": "Alege un logo",
       "current": "Logo actual",
       "upload": "Încarcă",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "O factură plătită parțial nu poate fi anulată",
     "notAwaitingPayment": "Această factură nu așteaptă nicio plată",
     "paymentExceedsBalance": "Suma depășește restul de plată",
-    "logoFormat": "Formate acceptate: PNG, JPG, WEBP sau SVG",
+    "logoFormat": "Formate acceptate: PNG, JPG sau WEBP",
     "logoTooLarge": "Logoul nu trebuie să depășească 2 MB",
     "pdfFailed": "PDF-ul nu a putut fi generat. Încearcă din nou sau folosește „Tipărește”."
   },

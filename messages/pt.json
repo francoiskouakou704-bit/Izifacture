@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Logótipo",
-      "description": "PNG, JPG, WEBP ou SVG · máx. 2 MB",
+      "description": "PNG, JPG ou WEBP · máx. 2 MB",
       "choose": "Escolher um logótipo",
       "current": "Logótipo atual",
       "upload": "Carregar",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Não é possível anular uma fatura parcialmente paga",
     "notAwaitingPayment": "Esta fatura não está a aguardar pagamento",
     "paymentExceedsBalance": "O montante excede o valor em falta",
-    "logoFormat": "Formatos aceites: PNG, JPG, WEBP ou SVG",
+    "logoFormat": "Formatos aceites: PNG, JPG ou WEBP",
     "logoTooLarge": "O logótipo não pode exceder 2 MB",
     "pdfFailed": "Não foi possível gerar o PDF. Tente novamente ou use «Imprimir»."
   },

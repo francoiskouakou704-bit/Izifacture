@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Logo",
-      "description": "PNG, JPG, WEBP atau SVG · maks. 2 MB",
+      "description": "PNG, JPG atau WEBP · maks. 2 MB",
       "choose": "Pilih logo",
       "current": "Logo semasa",
       "upload": "Muat naik",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Invois yang dibayar separa tidak boleh dibatalkan",
     "notAwaitingPayment": "Invois ini tidak menunggu bayaran",
     "paymentExceedsBalance": "Amaun melebihi baki perlu dibayar",
-    "logoFormat": "Format diterima: PNG, JPG, WEBP atau SVG",
+    "logoFormat": "Format diterima: PNG, JPG atau WEBP",
     "logoTooLarge": "Logo tidak boleh melebihi 2 MB",
     "pdfFailed": "PDF tidak dapat dijana. Cuba lagi atau gunakan “Cetak”."
   },

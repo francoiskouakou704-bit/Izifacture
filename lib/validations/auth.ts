@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import { z } from './zod'
 
 // Messages = clés de traduction (validation.*), traduites côté client.
 

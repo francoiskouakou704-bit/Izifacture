@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Sary famantarana",
-      "description": "PNG, JPG, WEBP na SVG · 2 Mo farafahabetsany",
+      "description": "PNG, JPG na WEBP · 2 Mo farafahabetsany",
       "choose": "Misafidiana sary famantarana",
       "current": "Sary famantarana ankehitriny",
       "upload": "Ampakaro",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Tsy azo foanana ny faktiora voaloa ampahany",
     "notAwaitingPayment": "Tsy miandry fandoavana ity faktiora ity",
     "paymentExceedsBalance": "Mihoatra ny sisa aloa ny vola",
-    "logoFormat": "Endrika ekena: PNG, JPG, WEBP na SVG",
+    "logoFormat": "Endrika ekena: PNG, JPG na WEBP",
     "logoTooLarge": "Tsy tokony hihoatra ny 2 Mo ny sary famantarana",
     "pdfFailed": "Tsy afaka namorona ny PDF. Andramo indray na ampiasao ny “Atontay”."
   },

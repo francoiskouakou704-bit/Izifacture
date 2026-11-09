@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Логотип",
-      "description": "PNG, JPG, WEBP або SVG · до 2 МБ",
+      "description": "PNG, JPG або WEBP · до 2 МБ",
       "choose": "Вибрати логотип",
       "current": "Поточний логотип",
       "upload": "Завантажити",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Не можна анулювати частково оплачений рахунок",
     "notAwaitingPayment": "Цей рахунок не очікує оплати",
     "paymentExceedsBalance": "Сума перевищує залишок до сплати",
-    "logoFormat": "Допустимі формати: PNG, JPG, WEBP або SVG",
+    "logoFormat": "Допустимі формати: PNG, JPG або WEBP",
     "logoTooLarge": "Логотип не повинен перевищувати 2 МБ",
     "pdfFailed": "Не вдалося створити PDF. Спробуйте ще раз або скористайтеся «Друк»."
   },

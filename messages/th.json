@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "โลโก้",
-      "description": "PNG, JPG, WEBP หรือ SVG · สูงสุด 2 MB",
+      "description": "PNG, JPG หรือ WEBP · สูงสุด 2 MB",
       "choose": "เลือกโลโก้",
       "current": "โลโก้ปัจจุบัน",
       "upload": "อัปโหลด",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "ไม่สามารถยกเลิกใบแจ้งหนี้ที่ชำระบางส่วนแล้ว",
     "notAwaitingPayment": "ใบแจ้งหนี้นี้ไม่ได้รอการชำระเงิน",
     "paymentExceedsBalance": "จำนวนเงินเกินยอดคงค้าง",
-    "logoFormat": "รูปแบบที่รองรับ: PNG, JPG, WEBP หรือ SVG",
+    "logoFormat": "รูปแบบที่รองรับ: PNG, JPG หรือ WEBP",
     "logoTooLarge": "โลโก้ต้องไม่เกิน 2 MB",
     "pdfFailed": "ไม่สามารถสร้าง PDF ได้ โปรดลองอีกครั้งหรือใช้ “พิมพ์”"
   },

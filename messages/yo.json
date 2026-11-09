@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Àmì",
-      "description": "PNG, JPG, WEBP tàbí SVG · MB 2 jùlọ",
+      "description": "PNG, JPG tàbí WEBP · MB 2 jùlọ",
       "choose": "Yan àmì",
       "current": "Àmì lọ́wọ́lọ́wọ́",
       "upload": "Gbé sókè",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "A kò lè fagilé ìwé owó tí a ti san apá kan",
     "notAwaitingPayment": "Ìwé owó yìí kò dúró de ìsanwó",
     "paymentExceedsBalance": "Iye náà ju èyí tó kù lọ",
-    "logoFormat": "Àwọn ìrísí tí a gbà: PNG, JPG, WEBP tàbí SVG",
+    "logoFormat": "Àwọn ìrísí tí a gbà: PNG, JPG tàbí WEBP",
     "logoTooLarge": "Àmì kò gbọ́dọ̀ ju MB 2 lọ",
     "pdfFailed": "A kò lè ṣẹ̀dá PDF. Gbìyànjú lẹ́ẹ̀kan sí i tàbí lo “Tẹ̀ jáde”."
   },

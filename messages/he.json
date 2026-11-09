@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "לוגו",
-      "description": "PNG,‏ JPG,‏ WEBP או SVG · עד 2MB",
+      "description": "PNG,‏ JPG או WEBP · עד 2MB",
       "choose": "בחירת לוגו",
       "current": "הלוגו הנוכחי",
       "upload": "העלאה",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "לא ניתן לבטל חשבונית ששולמה חלקית",
     "notAwaitingPayment": "חשבונית זו אינה ממתינה לתשלום",
     "paymentExceedsBalance": "הסכום גבוה מהיתרה לתשלום",
-    "logoFormat": "פורמטים נתמכים: PNG,‏ JPG,‏ WEBP או SVG",
+    "logoFormat": "פורמטים נתמכים: PNG,‏ JPG או WEBP",
     "logoTooLarge": "הלוגו לא יעלה על 2MB",
     "pdfFailed": "לא ניתן היה ליצור את קובץ ה-PDF. נסו שוב או השתמשו ב„הדפסה”."
   },

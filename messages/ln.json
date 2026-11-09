@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Logo",
-      "description": "PNG, JPG, WEBP to SVG · 2 Mo mingi",
+      "description": "PNG, JPG to WEBP · 2 Mo mingi",
       "choose": "Pona logo",
       "current": "Logo ya sikoyo",
       "upload": "Tia",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Fakitire oyo efutami ndambo ekoki kotikama te",
     "notAwaitingPayment": "Fakitire oyo ezali kozela bafuti te",
     "paymentExceedsBalance": "Motuya eleki oyo etikali",
-    "logoFormat": "Ba format oyo endimami: PNG, JPG, WEBP to SVG",
+    "logoFormat": "Ba format oyo endimami: PNG, JPG to WEBP",
     "logoTooLarge": "Logo esengeli koleka 2 Mo te",
     "pdfFailed": "PDF ekokaki kosalema te. Meka lisusu to salela “Bimisa na papie”."
   },

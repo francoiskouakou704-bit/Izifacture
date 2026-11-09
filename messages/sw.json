@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Nembo",
-      "description": "PNG, JPG, WEBP au SVG · upeo MB 2",
+      "description": "PNG, JPG au WEBP · upeo MB 2",
       "choose": "Chagua nembo",
       "current": "Nembo ya sasa",
       "upload": "Pakia",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Ankara iliyolipwa sehemu haiwezi kufutwa",
     "notAwaitingPayment": "Ankara hii haisubiri malipo",
     "paymentExceedsBalance": "Kiasi kinazidi kiasi kilichobaki",
-    "logoFormat": "Miundo inayokubalika: PNG, JPG, WEBP au SVG",
+    "logoFormat": "Miundo inayokubalika: PNG, JPG au WEBP",
     "logoTooLarge": "Nembo isizidi MB 2",
     "pdfFailed": "PDF haikuweza kutengenezwa. Jaribu tena au tumia “Chapisha”."
   },

@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Logo",
-      "description": "PNG, JPG, WEBP oder SVG · max. 2 MB",
+      "description": "PNG, JPG oder WEBP · max. 2 MB",
       "choose": "Logo auswählen",
       "current": "Aktuelles Logo",
       "upload": "Hochladen",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Eine teilweise bezahlte Rechnung kann nicht storniert werden",
     "notAwaitingPayment": "Für diese Rechnung wird keine Zahlung erwartet",
     "paymentExceedsBalance": "Der Betrag übersteigt den offenen Betrag",
-    "logoFormat": "Zulässige Formate: PNG, JPG, WEBP oder SVG",
+    "logoFormat": "Zulässige Formate: PNG, JPG oder WEBP",
     "logoTooLarge": "Das Logo darf 2 MB nicht überschreiten",
     "pdfFailed": "Das PDF konnte nicht erstellt werden. Versuche es erneut oder nutze „Drucken“."
   },

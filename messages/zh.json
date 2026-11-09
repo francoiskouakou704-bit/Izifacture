@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "标志",
-      "description": "PNG、JPG、WEBP 或 SVG · 最大 2 MB",
+      "description": "PNG、JPG 或 WEBP · 最大 2 MB",
       "choose": "选择标志",
       "current": "当前标志",
       "upload": "上传",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "已部分付款的发票不能作废",
     "notAwaitingPayment": "此发票无需付款",
     "paymentExceedsBalance": "金额超过待付金额",
-    "logoFormat": "支持的格式：PNG、JPG、WEBP 或 SVG",
+    "logoFormat": "支持的格式：PNG、JPG 或 WEBP",
     "logoTooLarge": "标志不能超过 2 MB",
     "pdfFailed": "无法生成 PDF，请重试或使用“打印”。"
   },

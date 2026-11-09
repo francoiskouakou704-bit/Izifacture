@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import { z } from './zod'
 import { CURRENCIES, type Currency } from '@/lib/types'
 
 // Les messages sont des clés de traduction (messages/*.json), traduites à l'affichage.

@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Tambari",
-      "description": "PNG, JPG, WEBP ko SVG · mafi yawa MB 2",
+      "description": "PNG, JPG ko WEBP · mafi yawa MB 2",
       "choose": "Zaɓi tambari",
       "current": "Tambarin yanzu",
       "upload": "Ɗora",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Ba za a iya soke takardar da aka biya wani sashe ba",
     "notAwaitingPayment": "Wannan takardar ba ta jiran biya",
     "paymentExceedsBalance": "Adadin ya wuce saura",
-    "logoFormat": "Tsarin da aka yarda: PNG, JPG, WEBP ko SVG",
+    "logoFormat": "Tsarin da aka yarda: PNG, JPG ko WEBP",
     "logoTooLarge": "Tambari kada ya wuce MB 2",
     "pdfFailed": "Ba a iya ƙirƙirar PDF ba. Sake gwadawa ko yi amfani da “Buga”."
   },

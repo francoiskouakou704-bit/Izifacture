@@ -7,6 +7,8 @@ const path = require('node:path')
 
 const APP_URL = new URL(process.env.IZI_APP_URL || 'https://izifacture-weld-rho.vercel.app')
 const START_PATH = '/dashboard' // redirige vers la connexion si besoin
+// Projet Supabase de l'app (authentification) : seul ce domaine Supabase s'ouvre dans la fenêtre
+const SUPABASE_HOST = process.env.IZI_SUPABASE_HOST || 'utpckpgfuhkqyyvcrddo.supabase.co'
 
 // Domaines autorisés à s'ouvrir DANS la fenêtre : l'app, l'authentification Supabase et Google.
 // Tout le reste (WhatsApp, mailto, sites externes) part dans le navigateur ou l'app du système.
@@ -15,7 +17,7 @@ function isInternal(url) {
     const { protocol, host } = new URL(url)
     if (protocol === 'file:') return true
     if (protocol !== 'https:' && !(protocol === 'http:' && APP_URL.protocol === 'http:')) return false
-    return host === APP_URL.host || host.endsWith('.supabase.co') || host === 'accounts.google.com'
+    return host === APP_URL.host || host === SUPABASE_HOST || host === 'accounts.google.com'
   } catch {
     return false
   }
@@ -70,13 +72,15 @@ function createWindow() {
     return { action: 'deny' }
   })
 
-  // Navigation vers un domaine externe : navigateur du système
-  wc.on('will-navigate', (event, url) => {
+  // Navigation (ou redirection serveur) vers un domaine externe : navigateur du système
+  const keepInside = (event, url) => {
     if (!isInternal(url)) {
       event.preventDefault()
       openExternal(url)
     }
-  })
+  }
+  wc.on('will-navigate', keepInside)
+  wc.on('will-redirect', keepInside)
 
   // Pas de connexion (ou site injoignable) : page hors ligne avec bouton « Réessayer »
   wc.on('did-fail-load', (_event, errorCode, _desc, url, isMainFrame) => {

@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Logo",
-      "description": "PNG, JPG, WEBP or SVG · 2 MB max",
+      "description": "PNG, JPG or WEBP · 2 MB max",
       "choose": "Choose a logo",
       "current": "Current logo",
       "upload": "Upload",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "A partially paid invoice cannot be cancelled",
     "notAwaitingPayment": "This invoice is not awaiting payment",
     "paymentExceedsBalance": "The amount exceeds the balance due",
-    "logoFormat": "Accepted formats: PNG, JPG, WEBP or SVG",
+    "logoFormat": "Accepted formats: PNG, JPG or WEBP",
     "logoTooLarge": "The logo must not exceed 2 MB",
     "pdfFailed": "The PDF could not be generated. Try again or use “Print”."
   },

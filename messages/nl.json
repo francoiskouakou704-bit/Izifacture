@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Logo",
-      "description": "PNG, JPG, WEBP of SVG · max. 2 MB",
+      "description": "PNG, JPG of WEBP · max. 2 MB",
       "choose": "Kies een logo",
       "current": "Huidig logo",
       "upload": "Uploaden",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Een gedeeltelijk betaalde factuur kan niet worden geannuleerd",
     "notAwaitingPayment": "Voor deze factuur wordt geen betaling verwacht",
     "paymentExceedsBalance": "Het bedrag is hoger dan het openstaande saldo",
-    "logoFormat": "Toegestane formaten: PNG, JPG, WEBP of SVG",
+    "logoFormat": "Toegestane formaten: PNG, JPG of WEBP",
     "logoTooLarge": "Het logo mag niet groter zijn dan 2 MB",
     "pdfFailed": "De pdf kon niet worden gemaakt. Probeer het opnieuw of gebruik “Afdrukken”."
   },

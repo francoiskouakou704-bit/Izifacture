@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Logotyp",
-      "description": "PNG, JPG, WEBP eller SVG · max 2 MB",
+      "description": "PNG, JPG eller WEBP · max 2 MB",
       "choose": "Välj en logotyp",
       "current": "Nuvarande logotyp",
       "upload": "Ladda upp",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "En delvis betald faktura kan inte makuleras",
     "notAwaitingPayment": "Denna faktura väntar inte på betalning",
     "paymentExceedsBalance": "Beloppet överstiger det som återstår",
-    "logoFormat": "Tillåtna format: PNG, JPG, WEBP eller SVG",
+    "logoFormat": "Tillåtna format: PNG, JPG eller WEBP",
     "logoTooLarge": "Logotypen får inte överstiga 2 MB",
     "pdfFailed": "PDF:en kunde inte skapas. Försök igen eller använd ”Skriv ut”."
   },

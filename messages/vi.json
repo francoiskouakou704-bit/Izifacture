@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Logo",
-      "description": "PNG, JPG, WEBP hoặc SVG · tối đa 2 MB",
+      "description": "PNG, JPG hoặc WEBP · tối đa 2 MB",
       "choose": "Chọn logo",
       "current": "Logo hiện tại",
       "upload": "Tải lên",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Không thể hủy hóa đơn đã thanh toán một phần",
     "notAwaitingPayment": "Hóa đơn này không chờ thanh toán",
     "paymentExceedsBalance": "Số tiền vượt quá số còn phải trả",
-    "logoFormat": "Định dạng được chấp nhận: PNG, JPG, WEBP hoặc SVG",
+    "logoFormat": "Định dạng được chấp nhận: PNG, JPG hoặc WEBP",
     "logoTooLarge": "Logo không được vượt quá 2 MB",
     "pdfFailed": "Không thể tạo PDF. Vui lòng thử lại hoặc dùng “In”."
   },

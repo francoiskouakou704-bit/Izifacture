@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Logo",
-      "description": "PNG, JPG, WEBP veya SVG · en fazla 2 MB",
+      "description": "PNG, JPG veya WEBP · en fazla 2 MB",
       "choose": "Logo seçin",
       "current": "Mevcut logo",
       "upload": "Yükle",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Kısmen ödenmiş fatura iptal edilemez",
     "notAwaitingPayment": "Bu fatura ödeme beklemiyor",
     "paymentExceedsBalance": "Tutar kalan borcu aşıyor",
-    "logoFormat": "Kabul edilen biçimler: PNG, JPG, WEBP veya SVG",
+    "logoFormat": "Kabul edilen biçimler: PNG, JPG veya WEBP",
     "logoTooLarge": "Logo 2 MB’ı aşmamalıdır",
     "pdfFailed": "PDF oluşturulamadı. Tekrar deneyin veya “Yazdır”ı kullanın."
   },

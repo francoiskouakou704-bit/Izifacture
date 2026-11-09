@@ -284,7 +284,7 @@ export const supabaseDataSource: DataSource = {
 
     let logoUrl: string | null = null
     if (file) {
-      const ext = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp', 'image/svg+xml': 'svg' }[file.mimeType] ?? 'bin'
+      const ext = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp' }[file.mimeType] ?? 'bin'
       // Nom unique : évite le cache navigateur/CDN de l'ancien logo
       const path = `${org.id}/logo-${Date.now()}.${ext}`
       const { error } = await bucket.upload(path, file.bytes, { contentType: file.mimeType, upsert: false })

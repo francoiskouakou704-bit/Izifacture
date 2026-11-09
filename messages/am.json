@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "አርማ",
-      "description": "PNG፣ JPG፣ WEBP ወይም SVG · ከፍተኛ 2 ሜባ",
+      "description": "PNG፣ JPG ወይም WEBP · ከፍተኛ 2 ሜባ",
       "choose": "አርማ ይምረጡ",
       "current": "የአሁኑ አርማ",
       "upload": "ስቀል",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "በከፊል የተከፈለ ደረሰኝ ሊሰረዝ አይችልም",
     "notAwaitingPayment": "ይህ ደረሰኝ ክፍያ አይጠብቅም",
     "paymentExceedsBalance": "መጠኑ ከቀሪው ሂሳብ ይበልጣል",
-    "logoFormat": "ተቀባይነት ያላቸው ቅርጸቶች፦ PNG፣ JPG፣ WEBP ወይም SVG",
+    "logoFormat": "ተቀባይነት ያላቸው ቅርጸቶች፦ PNG፣ JPG ወይም WEBP",
     "logoTooLarge": "አርማው ከ2 ሜባ መብለጥ የለበትም",
     "pdfFailed": "PDF መፍጠር አልተቻለም። እንደገና ይሞክሩ ወይም «አትም» ይጠቀሙ።"
   },

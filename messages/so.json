@@ -422,7 +422,7 @@
     },
     "logo": {
       "title": "Astaan",
-      "description": "PNG, JPG, WEBP ama SVG · ugu badnaan 2 MB",
+      "description": "PNG, JPG ama WEBP · ugu badnaan 2 MB",
       "choose": "Dooro astaan",
       "current": "Astaanta hadda",
       "upload": "Soo geli",
@@ -567,7 +567,7 @@
     "cannotCancelPartiallyPaid": "Biil qayb laga bixiyay lama joojin karo",
     "notAwaitingPayment": "Biilkan ma sugayo lacag bixin",
     "paymentExceedsBalance": "Qadarku wuxuu ka badan yahay waxa haray",
-    "logoFormat": "Qaababka la aqbalay: PNG, JPG, WEBP ama SVG",
+    "logoFormat": "Qaababka la aqbalay: PNG, JPG ama WEBP",
     "logoTooLarge": "Astaantu waa inaysan dhaafin 2 MB",
     "pdfFailed": "PDF lama samayn karin. Mar kale isku day ama isticmaal “Daabac”."
   },
