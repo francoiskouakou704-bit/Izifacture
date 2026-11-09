@@ -23,12 +23,8 @@ export function HeroMockup() {
           </div>
           <div className="flex flex-wrap items-center gap-2">
             <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">{mockup.currency}</span>
-            <span className="flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
-              <span aria-hidden className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75 motion-reduce:animate-none" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
-              </span>
-              {mockup.live}
+            <span className="rounded-full border border-dashed border-slate-200 px-3 py-1 text-xs font-medium text-slate-400">
+              {mockup.caption}
             </span>
           </div>
         </div>

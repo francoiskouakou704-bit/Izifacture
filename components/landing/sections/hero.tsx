@@ -6,7 +6,7 @@ import { HeroMockup } from './hero-mockup'
 /** Délai de l'animation d'entrée, pour faire apparaître les blocs l'un après l'autre. */
 const delay = (ms: number) => ({ '--lp-delay': `${ms}ms` }) as React.CSSProperties
 
-/** Haut de page : annonce, titre, sous-titre, boutons, moyens de paiement, aperçu de l'app. */
+/** Haut de page : annonce, titre, sous-titre, boutons, points forts, aperçu de l'app. */
 export function Hero() {
   return (
     <section className="relative overflow-hidden pb-24 pt-12 lg:pb-32 lg:pt-16">
@@ -59,10 +59,10 @@ export function Hero() {
         </div>
 
         <div style={delay(320)} className="lp-enter mt-10 flex flex-col items-center">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-500">{hero.socialProof}</p>
-          <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 sm:gap-x-10">
-            {hero.paymentBrands.map((b) => (
-              <li key={b.name} className="flex items-center gap-1.5 text-sm font-bold tracking-tight text-slate-800">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-500">{hero.highlightsLabel}</p>
+          <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 sm:gap-x-10">
+            {hero.highlights.map((b) => (
+              <li key={b.name} className="flex items-center gap-1.5 text-sm font-semibold tracking-tight text-slate-700">
                 <span aria-hidden className={`h-2.5 w-2.5 rounded-full ${b.dot}`} />
                 {b.name}
               </li>

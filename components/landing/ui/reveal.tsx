@@ -5,6 +5,8 @@ import { cn } from '@/lib/utils'
 
 /**
  * Fait apparaître son contenu (fondu + glissement) quand il entre à l'écran.
+ * Le contenu est visible par défaut : il n'est masqué qu'une fois le JavaScript chargé,
+ * et seulement s'il est encore sous l'écran — rien ne reste caché si le script tarde ou échoue.
  * `delay` (ms) décale l'apparition pour animer une grille carte par carte.
  */
 export function Reveal({
@@ -21,16 +23,20 @@ export function Reveal({
   // Les trois balises acceptent les mêmes attributs : on type comme un <div>
   const Comp = Tag as 'div'
   const ref = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
+  const [state, setState] = useState<'idle' | 'hidden' | 'shown'>('idle')
 
   useEffect(() => {
     const el = ref.current
-    if (!el) return
-    if (!('IntersectionObserver' in window)) return setVisible(true)
+    if (!el || !('IntersectionObserver' in window)) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    // Déjà à l'écran : on ne le cache pas (pas de clignotement)
+    if (el.getBoundingClientRect().top < window.innerHeight) return
+
+    setState('hidden')
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setVisible(true)
+          setState('shown')
           observer.disconnect()
         }
       },
@@ -43,7 +49,7 @@ export function Reveal({
   return (
     <Comp
       ref={ref}
-      data-visible={visible}
+      data-reveal={state}
       className={cn('lp-reveal', className)}
       style={{ '--lp-delay': `${delay}ms` } as React.CSSProperties}
     >

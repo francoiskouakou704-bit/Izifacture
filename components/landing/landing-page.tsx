@@ -5,7 +5,7 @@ import { Hero } from './sections/hero'
 import { ProblemsSection } from './sections/problems-section'
 import { SiteFooter } from './sections/site-footer'
 import { SiteHeader } from './sections/site-header'
-import { TestimonialsSection } from './sections/testimonials-section'
+import { HowItWorksSection } from './sections/how-it-works-section'
 
 /** Landing page publique : assemblage des sections, dans l'ordre d'affichage. */
 export function LandingPage() {
@@ -17,7 +17,7 @@ export function LandingPage() {
         <Hero />
         <ProblemsSection />
         <FeaturesSection />
-        <TestimonialsSection />
+        <HowItWorksSection />
         <FaqSection />
         <CtaBanner />
       </main>

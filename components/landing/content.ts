@@ -1,7 +1,8 @@
 import type { Tone } from './ui/tones'
 
 // Contenu de la landing page : tous les textes au même endroit, les composants ne font que l'afficher.
-// Pour modifier un titre, une carte ou une question, c'est ici.
+// Règle : n'annoncer que ce que l'app fait réellement (pas de chiffres ni d'avis inventés).
+// Pour ajouter de vrais témoignages clients, remplir `testimonials.items` : la section s'affiche alors.
 
 export const ROUTES = { login: '/login', signup: '/signup' } as const
 
@@ -14,14 +15,14 @@ export const brand = {
 export const nav = [
   { label: 'Fonctionnalités', href: '#fonctionnalites' },
   { label: 'Pourquoi nous', href: '#problemes' },
-  { label: 'Témoignages', href: '#temoignages' },
+  { label: 'Comment ça marche', href: '#comment-ca-marche' },
   { label: 'FAQ', href: '#faq' },
 ]
 
 export const cta = {
   login: 'Se connecter',
   start: 'Commencer gratuitement',
-  demo: 'Voir la démo',
+  demo: 'Voir l’aperçu',
 }
 
 export const hero = {
@@ -29,48 +30,49 @@ export const hero = {
   title: ['Fini les factures bricolées', 'sur Word et Excel.'],
   // Les segments `strong` sont mis en gras
   subtitle: [
-    { text: 'La solution de facturation tout-en-un conçue pour les entrepreneurs africains : facturez en ' },
+    { text: 'La facturation pensée pour les entrepreneurs africains : facturez en ' },
     { text: 'FCFA', strong: true },
-    { text: ', appliquez automatiquement la ' },
-    { text: 'TVA 18%', strong: true },
-    { text: ' et encaissez plus vite.' },
+    { text: ', laissez la ' },
+    { text: 'TVA', strong: true },
+    { text: ' se calculer toute seule et suivez chaque paiement jusqu’au dernier franc.' },
   ],
-  socialProof: 'Déjà adopté par plus de 2 500 PME et freelances en Afrique de l’Ouest',
-  paymentBrands: [
-    { name: 'Wave Business', dot: 'bg-blue-500' },
-    { name: 'Orange Money', dot: 'bg-orange-500' },
-    { name: 'MTN MoMo', dot: 'bg-yellow-500' },
-    { name: 'Moov Money', dot: 'bg-emerald-600' },
+  highlightsLabel: 'Conçu pour vos usages du quotidien',
+  highlights: [
+    { name: 'Francs CFA (XOF & XAF)', dot: 'bg-blue-500' },
+    { name: 'Paiements Mobile Money', dot: 'bg-orange-500' },
+    { name: 'Partage WhatsApp', dot: 'bg-emerald-600' },
+    { name: 'PDF professionnels', dot: 'bg-indigo-500' },
   ],
 }
 
+// Maquette illustrative de l'app (montants fictifs)
 export const mockup = {
   floating: [
-    { tone: 'emerald', symbol: '✓', label: 'Transfert reçu', value: '+ 1 180 000 FCFA', detail: 'Payé via Wave CI' },
-    { tone: 'blue', symbol: '18%', label: 'Régime fiscal UEMOA', value: 'TVA 18% conforme', detail: 'Calcul automatique' },
+    { tone: 'emerald', symbol: '✓', label: 'Paiement enregistré', value: '+ 1 180 000 FCFA', detail: 'Mobile Money' },
+    { tone: 'blue', symbol: '18%', label: 'TVA', value: 'Calculée automatiquement', detail: 'Taux modifiable' },
   ] satisfies { tone: Tone; symbol: string; label: string; value: string; detail: string }[],
   windowTitle: 'Tableau de bord — Entreprise SA (Abidjan)',
   currency: 'Devise : FCFA (XOF)',
-  live: 'En direct',
+  caption: 'Aperçu illustratif',
   metrics: [
-    { label: 'Total encaissé (mois en cours)', value: '4 850 000 FCFA', note: '↑ +24% vs mois dernier', valueClass: 'text-ink', noteClass: 'text-emerald-600' },
-    { label: 'En attente de règlement', value: '1 200 000 FCFA', note: '2 factures envoyées', valueClass: 'text-amber-600', noteClass: 'text-slate-500' },
-    { label: 'TVA 18% collectée', value: '873 000 FCFA', note: 'Prêt pour déclaration', valueClass: 'text-ink', noteClass: 'text-blue-600' },
+    { label: 'Montant facturé (6 derniers mois)', value: '6 050 000 FCFA', note: '12 factures émises', valueClass: 'text-ink', noteClass: 'text-slate-500' },
+    { label: 'Montant encaissé', value: '4 850 000 FCFA', note: 'Paiements partiels inclus', valueClass: 'text-emerald-600', noteClass: 'text-emerald-600' },
+    { label: 'Reste à encaisser', value: '1 200 000 FCFA', note: '1 facture en retard', valueClass: 'text-amber-600', noteClass: 'text-rose-600' },
   ],
   invoice: {
-    reference: 'Aperçu facture #FAC-2025-084',
+    reference: 'Facture FAC-2026-0084',
     title: 'Prestation Conseil & Stratégie Digitale',
     client: 'Client : Groupe Horizon SARL • Dakar, Sénégal',
-    status: 'Payé via Orange Money',
+    status: 'Payée',
     lines: [
       { label: 'Honoraires mensuels prestation digitale', amount: '1 000 000 FCFA' },
-      { label: 'TVA applicable (taux légal 18%)', amount: '180 000 FCFA', badge: 'Auto' },
+      { label: 'TVA 18 %', amount: '180 000 FCFA', badge: 'Auto' },
     ],
-    totalLabel: 'Total TTC à payer',
+    totalLabel: 'Total TTC',
     total: '1 180 000 FCFA',
-    paymentsLabel: 'Moyens acceptés :',
-    payments: 'Wave • Orange Money • Virement BICICI',
-    receipt: 'Télécharger le reçu PDF officiel →',
+    paymentsLabel: 'Modalités de paiement :',
+    payments: 'Mobile Money • Virement • Espèces',
+    receipt: 'Télécharger le PDF →',
   },
 }
 
@@ -83,98 +85,92 @@ export const problems = {
     {
       tone: 'rose',
       symbol: '✕',
-      title: 'Factures non professionnelles & perte de crédibilité',
-      text: 'Fichiers Word déformés, police aléatoire, absence des mentions légales locales requises. Les grands comptes et multinationales hésitent à valider vos bons de commande et retiennent vos paiements.',
-      impact: 'Image dégradée auprès des donneurs d’ordres',
+      title: 'Factures peu professionnelles & perte de crédibilité',
+      text: 'Fichiers Word déformés, mise en page aléatoire, informations manquantes. Vos clients, surtout les grands comptes, hésitent à valider vos factures et retardent leurs paiements.',
+      impact: 'Image dégradée auprès de vos clients',
     },
     {
       tone: 'amber',
       symbol: '%',
-      title: 'Calculs manuels et erreurs récurrentes de TVA',
-      text: 'Erreurs de calcul sur la TVA à 18%, arrondis mal gérés, acomptes oubliés et confusions entre montants HT et TTC. Vous vous exposez à des redressements fiscaux et à des régularisations douloureuses.',
+      title: 'Calculs manuels et erreurs de TVA',
+      text: 'Erreurs de calcul sur la TVA, arrondis mal gérés, confusions entre montants HT et TTC. Chaque erreur se paie en corrections, en litiges et en temps perdu avec la comptabilité.',
       impact: 'Risques fiscaux et litiges avec la comptabilité',
     },
     {
       tone: 'purple',
       symbol: '⌛',
-      title: 'Suivi des paiements impossible & impayés récurrents',
-      text: 'Relances manuelles sans cesse reportées par gêne ou oubli, justificatifs de virements ou Mobile Money éparpillés dans WhatsApp. Votre trésorerie stagne dans le flou complet.',
-      impact: 'Retards de trésorerie moyens de 45 jours',
+      title: 'Paiements difficiles à suivre',
+      text: 'Qui a payé, qui a payé une partie, quelle facture a dépassé son échéance ? Les justificatifs de virements et de Mobile Money s’éparpillent dans WhatsApp et votre trésorerie reste floue.',
+      impact: 'Une trésorerie difficile à piloter',
     },
   ] satisfies { tone: Tone; symbol: string; title: string; text: string; impact: string }[],
 }
 
 export const features = {
   eyebrow: 'Simplicité & Puissance',
-  title: 'Tout ce dont vous avez besoin pour gérer votre business',
-  subtitle: 'Une plateforme pensée spécifiquement pour le contexte économique et les usages de l’Afrique francophone.',
+  title: 'Tout ce dont vous avez besoin pour facturer sereinement',
+  subtitle: 'Une application pensée pour le contexte économique et les usages de l’Afrique francophone.',
   items: [
     {
       tone: 'blue',
       symbol: '⚡',
-      eyebrow: 'Création ultra-rapide',
-      title: 'Factures professionnelles en 2 clics',
-      text: 'Modèles haut de gamme personnalisés avec votre logo et vos mentions légales locales (RCCM, NIF, DFE). Génération de PDF haute définition propre et partage immédiat par WhatsApp ou email.',
-      highlight: '📄 Générateur PDF instantané',
-      highlightNote: '100% Conforme',
+      eyebrow: 'Création rapide',
+      title: 'Des factures professionnelles en quelques clics',
+      text: 'Votre logo, vos coordonnées et votre numéro fiscal sur chaque facture, avec une numérotation automatique et continue. Téléchargez le PDF, imprimez, ou envoyez un lien sécurisé par WhatsApp ou email.',
+      highlight: '📄 PDF, impression et lien en ligne',
+      highlightNote: 'Prêt à envoyer',
     },
     {
       tone: 'emerald',
       symbol: '18%',
-      eyebrow: 'Fiscalité locale',
-      title: 'TVA 18% calculée automatiquement',
-      text: 'Fini les calculs à la calculatrice. Indiquez vos montants et la plateforme gère avec exactitude la TVA à 18%, les exonérations spécifiques (BTP, export, ONG) ainsi que les acomptes perçus.',
-      highlight: '🧮 Bascule HT / TTC instantanée',
-      highlightNote: 'Zéro erreur fiscale',
+      eyebrow: 'Calculs automatiques',
+      title: 'La TVA calculée pour vous',
+      text: 'Fixez votre taux par défaut (18 % au départ), ajustez-le ligne par ligne si besoin, ajoutez une remise : les totaux HT, TVA et TTC se calculent tout seuls, sans calculatrice.',
+      highlight: '🧮 HT, TVA et TTC toujours justes',
+      highlightNote: 'Zéro erreur de calcul',
     },
     {
       tone: 'amber',
-      symbol: '🔔',
-      eyebrow: 'Trésorerie & Encaissement',
-      title: 'Suivi des paiements en temps réel',
-      text: 'Alertes instantanées dès qu’une facture est consultée par votre client. Relances automatiques douces et polies par WhatsApp et email pour les échéances dépassées.',
-      highlight: '📲 Rappels automatisés WhatsApp',
-      highlightNote: 'Payé 2x plus vite',
+      symbol: '💰',
+      eyebrow: 'Trésorerie',
+      title: 'Suivi des paiements',
+      text: 'Enregistrez les paiements complets ou partiels (Mobile Money, virement, espèces, carte) : le reste à payer se met à jour et les factures dont l’échéance est dépassée passent automatiquement « en retard ».',
+      highlight: '📈 Tableau de bord facturé / encaissé',
+      highlightNote: 'Trésorerie claire',
     },
     {
       tone: 'indigo',
       symbol: '👥',
-      eyebrow: 'CRM léger',
+      eyebrow: 'Clients',
       title: 'Gestion de clients intégrée',
-      text: 'Répertoire centralisé de tous vos clients. Consultez en un coup d’œil l’historique de facturation, les devis signés, les règlements en retard et le chiffre d’affaires généré par chaque partenaire.',
-      highlight: '📊 Historique complet & Solde',
-      highlightNote: 'Vue 360°',
+      text: 'Un répertoire de tous vos clients avec, pour chacun, l’historique des factures, le total facturé et le reste à encaisser. Recherche instantanée et export de vos factures en CSV.',
+      highlight: '📊 Historique et solde par client',
+      highlightNote: 'Vue d’ensemble',
     },
   ] satisfies { tone: Tone; symbol: string; eyebrow: string; title: string; text: string; highlight: string; highlightNote: string }[],
 }
 
 export const stats = [
-  { value: '100%', label: 'Conforme FCFA & UEMOA', text: 'Gestion des devises XOF et XAF native' },
-  { value: '18%', label: 'TVA automatique', text: 'Calculée selon les règles légales en vigueur' },
-  { value: '2x plus rapide', label: 'Délai d’encaissement', text: 'Grâce aux relances automatisées et QR code de paiement' },
+  { value: 'XOF & XAF', label: 'Francs CFA natifs', text: 'Ainsi que l’euro, le dollar, le naira, le cedi et d’autres devises' },
+  { value: '18 %', label: 'TVA par défaut', text: 'Modifiable dans vos paramètres et ajustable ligne par ligne' },
+  { value: '40 langues', label: 'Interface multilingue', text: 'Français, anglais, wolof, swahili, haoussa, lingala…' },
 ]
+
+export const steps = {
+  eyebrow: 'Comment ça marche',
+  title: 'Votre première facture en trois étapes',
+  items: [
+    { title: 'Créez votre compte', text: 'Inscrivez-vous par email ou avec Google, puis renseignez votre entreprise : nom, logo, devise et taux de TVA.' },
+    { title: 'Rédigez la facture', text: 'Choisissez le client, ajoutez vos lignes : les totaux se calculent pendant que vous tapez, avec un aperçu en direct.' },
+    { title: 'Envoyez et encaissez', text: 'Partagez la facture par WhatsApp, email ou lien, puis enregistrez les paiements au fur et à mesure.' },
+  ],
+}
 
 export const testimonials = {
   eyebrow: 'Avis clients',
   title: 'Ils ont simplifié leur facturation',
-  items: [
-    {
-      quote:
-        'Avant iziFacture, je passais mes dimanches soirs à me battre avec mes tableaux Excel et à calculer la TVA pour mes clients à Dakar. Aujourd’hui, mes factures partent en 2 minutes et mes clients me disent qu’elles sont ultra professionnelles.',
-      name: 'Mamadou Kane',
-      role: 'Fondateur Agence Tech & Com — Dakar, Sénégal',
-      initials: 'MK',
-      avatar: 'bg-blue-600',
-    },
-    {
-      quote:
-        'Le suivi des paiements Wave et Orange Money a tout changé pour notre cabinet de conseil. Nous savons exactement qui a réglé et la TVA 18% est directement ventilée pour notre expert-comptable à Abidjan. Un vrai gain de temps !',
-      name: 'Aïcha Bamba',
-      role: 'Directrice Générale, Bamba Consulting — Abidjan, Côte d’Ivoire',
-      initials: 'AB',
-      avatar: 'bg-emerald-600',
-    },
-  ],
+  // Vide tant qu'il n'y a pas d'avis réels : la section est alors masquée.
+  items: [] as { quote: string; name: string; role: string; initials: string; avatar: string }[],
 }
 
 export const faq = {
@@ -184,39 +180,44 @@ export const faq = {
     {
       question: 'Est-ce adapté si mon entreprise n’est pas assujettie à la TVA ?',
       answer:
-        'Absolument. Vous pouvez activer ou désactiver la TVA 18% en un clic. La mention légale d’exonération appropriée sera automatiquement inscrite en bas de votre facture conformément au Code Général des Impôts local.',
+        'Oui. Mettez votre taux de TVA par défaut à 0 % dans les paramètres (ou ajustez-le ligne par ligne), puis ajoutez la mention d’exonération qui vous concerne dans le pied de page de vos factures.',
     },
     {
       question: 'Puis-je facturer à la fois en XOF (UEMOA) et en XAF (CEMAC) ?',
       answer:
-        'Oui, iziFacture prend en charge les francs CFA d’Afrique de l’Ouest (XOF) et d’Afrique Centrale (XAF), ainsi que l’Euro et le Dollar pour vos clients internationaux.',
+        'Oui. iziFacture gère le franc CFA d’Afrique de l’Ouest (XOF) et d’Afrique centrale (XAF), ainsi que l’euro, le dollar, le naira, le cedi, le shilling kényan, le dirham, le franc guinéen et le franc congolais.',
     },
     {
       question: 'Comment envoyer ma facture par WhatsApp ?',
       answer:
-        'D’un simple clic sur le bouton « Partager sur WhatsApp », un lien sécurisé et un résumé élégant sont pré-remplis. Votre client peut télécharger son PDF propre et voir vos coordonnées de paiement Mobile Money en un instant.',
+        'Depuis une facture, « Partager sur WhatsApp » ouvre WhatsApp avec un message prêt à envoyer contenant le lien sécurisé de la facture. Votre client la consulte en ligne, l’imprime ou télécharge le PDF, avec vos modalités de paiement (numéro Mobile Money, coordonnées bancaires…).',
+    },
+    {
+      question: 'Mes données sont-elles protégées ?',
+      answer:
+        'Chaque entreprise n’accède qu’à ses propres données : l’isolation est appliquée directement par la base de données, pas seulement par l’interface. Les liens de factures partagés sont des liens uniques et impossibles à deviner.',
     },
   ],
 }
 
 export const finalCta = {
-  badge: 'Démarrage instantané en 30 secondes',
+  badge: 'Prêt en quelques minutes',
   title: 'Prêt à moderniser votre facturation dès aujourd’hui ?',
-  subtitle: 'Rejoignez les milliers d’entrepreneurs africains qui gagnent du temps et renforcent leur image avec iziFacture.',
+  subtitle: 'Créez votre compte, configurez votre entreprise et envoyez votre première facture professionnelle aujourd’hui.',
   button: 'Créer ma première facture gratuitement',
-  note: 'Sans carte bancaire • Configuration en 2 minutes',
+  note: 'Sans carte bancaire • Configuration en quelques minutes',
 }
 
 export const footer = {
-  tagline: 'Le logiciel de facturation simple, rapide et conforme pour les professionnels, PME et indépendants en Afrique.',
+  tagline: 'Le logiciel de facturation simple et rapide pour les professionnels, PME et indépendants en Afrique.',
   columns: [
     {
       title: 'Produit',
       links: [
-        { label: 'Facturation FCFA', href: '#fonctionnalites' },
-        { label: 'Calculateur TVA 18%', href: '#fonctionnalites' },
-        { label: 'Relances WhatsApp', href: '#fonctionnalites' },
-        { label: 'Reçus Mobile Money', href: '#fonctionnalites' },
+        { label: 'Facturation en FCFA', href: '#fonctionnalites' },
+        { label: 'TVA automatique', href: '#fonctionnalites' },
+        { label: 'Partage WhatsApp', href: '#fonctionnalites' },
+        { label: 'Suivi des paiements', href: '#fonctionnalites' },
       ],
     },
     {
@@ -233,11 +234,11 @@ export const footer = {
       links: [
         { label: 'Conditions générales', href: '#' },
         { label: 'Politique de confidentialité', href: '#' },
-        { label: 'Sécurité des données', href: '#' },
+        { label: 'Sécurité des données', href: '#faq' },
         { label: 'support@izifacture.com', href: 'mailto:support@izifacture.com' },
       ],
     },
   ] as { title: string; links: { label: string; href?: string }[] }[],
   copyright: `© ${new Date().getFullYear()} iziFacture. Tous droits réservés.`,
-  notice: 'Optimisé pour les transactions en FCFA (XOF / XAF) et les systèmes fiscaux locaux.',
+  notice: 'Optimisé pour la facturation en FCFA (XOF / XAF).',
 }

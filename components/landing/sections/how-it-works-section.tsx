@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils'
-import { stats, testimonials } from '../content'
+import { stats, steps, testimonials } from '../content'
 import { Reveal } from '../ui/reveal'
 import { Section, SectionHeader } from '../ui/section'
 
@@ -14,7 +14,20 @@ export function StatItem({ value, label, text }: { value: string; label: string;
   )
 }
 
-/** Avis client : note, citation, auteur. */
+/** Étape numérotée d'un parcours. */
+export function StepCard({ index, title, text }: { index: number; title: string; text: string }) {
+  return (
+    <article className="lp-card flex h-full flex-col rounded-3xl border border-slate-100 bg-slate-50 p-6 sm:p-8">
+      <span aria-hidden className="mb-6 flex h-10 w-10 items-center justify-center rounded-full bg-ink text-sm font-bold text-white">
+        {index}
+      </span>
+      <h3 className="text-lg font-bold text-slate-900">{title}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-slate-600">{text}</p>
+    </article>
+  )
+}
+
+/** Avis client : note, citation, auteur. Utilisé dès que `testimonials.items` contient de vrais avis. */
 export function TestimonialCard({
   quote,
   name,
@@ -49,9 +62,10 @@ export function TestimonialCard({
   )
 }
 
-export function TestimonialsSection() {
+/** Chiffres clés, parcours en trois étapes et, s'il y en a, avis clients. */
+export function HowItWorksSection() {
   return (
-    <Section id="temoignages" background="white" className="lg:py-20">
+    <Section id="comment-ca-marche" background="white" className="lg:py-20">
       <div className="grid grid-cols-1 gap-10 border-b border-slate-100 pb-16 text-center md:grid-cols-3 md:gap-8">
         {stats.map((s, i) => (
           <Reveal key={s.label} delay={i * 120}>
@@ -61,15 +75,28 @@ export function TestimonialsSection() {
       </div>
 
       <div className="mt-16">
-        <SectionHeader eyebrow={testimonials.eyebrow} eyebrowClass="text-emerald-600" title={testimonials.title} className="mb-12 max-w-2xl sm:mb-12" />
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
-          {testimonials.items.map((t, i) => (
-            <Reveal key={t.name} delay={i * 120}>
-              <TestimonialCard {...t} />
+        <SectionHeader eyebrow={steps.eyebrow} eyebrowClass="text-emerald-600" title={steps.title} className="mb-12 max-w-2xl sm:mb-12" />
+        <ol className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+          {steps.items.map((step, i) => (
+            <Reveal as="li" key={step.title} delay={i * 120}>
+              <StepCard index={i + 1} {...step} />
             </Reveal>
           ))}
-        </div>
+        </ol>
       </div>
+
+      {testimonials.items.length > 0 && (
+        <div className="mt-16">
+          <SectionHeader eyebrow={testimonials.eyebrow} eyebrowClass="text-emerald-600" title={testimonials.title} className="mb-12 max-w-2xl sm:mb-12" />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+            {testimonials.items.map((t, i) => (
+              <Reveal key={t.name} delay={i * 120}>
+                <TestimonialCard {...t} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      )}
     </Section>
   )
 }

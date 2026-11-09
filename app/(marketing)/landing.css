@@ -163,17 +163,17 @@
 }
 
 /* ─── Apparition au défilement ───────────────────────────── */
+/* Visible par défaut (sans JavaScript aussi) : seuls les blocs encore hors écran au
+   chargement passent en « hidden », puis apparaissent quand on les atteint. */
 .lp-reveal {
-  opacity: 0;
-  transform: translateY(24px);
   transition:
     opacity 0.7s ease,
     transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: var(--lp-delay, 0ms);
 }
-.lp-reveal[data-visible='true'] {
-  opacity: 1;
-  transform: none;
+.lp-reveal[data-reveal='hidden'] {
+  opacity: 0;
+  transform: translateY(24px);
 }
 
 /* Entrée au chargement (haut de page) : CSS pur, n'attend pas le JavaScript */
@@ -215,7 +215,8 @@
   .lp-enter {
     animation: none;
   }
-  .lp-reveal {
+  .lp-reveal,
+  .lp-reveal[data-reveal='hidden'] {
     opacity: 1;
     transform: none;
     transition: none;
